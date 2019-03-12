@@ -1,6 +1,8 @@
 import pygame
 import numpy as np
 
+
+
 def getNeighbors(matrix, current) :
     l,c = matrix.shape
 
@@ -93,6 +95,18 @@ def getSizes(fenetre,squareSize):
     #print (nLines, nCols)
     return nLines,nCols
 
+def drawDone(toDo,alreadyDone, fenetre,size):
+    color = (0,0,128)
+    ## AlreadyDone
+    for e in toDo :
+        rect = pygame.Rect(e[1]*size+1,e[0]*size+1,size-1,size-1)
+        pygame.draw.rect(fenetre, color, rect, 0)
+
+    color = (128,0,128)
+    ## AlreadyDone
+    for e in alreadyDone :
+        rect = pygame.Rect(e[1]*size+1,e[0]*size+1,size-1,size-1)
+        pygame.draw.rect(fenetre, color, rect, 0)
 
 def drawPath(path, fenetre,size):
     color = (128,128,0)
@@ -147,7 +161,51 @@ def drawMatrix(matrix,fenetre,size):
             else:
                 pygame.draw.rect(fenetre, (0,0,0), rect, 0)
 
+def drawArrow(i,j,fenetre, squareSize, direction):
 
+    color =(128,128,128)
+    delta = squareSize / 6
+
+    if direction == "up" :
+        start_pos = (j*squareSize + squareSize/2, (i+1)*squareSize - squareSize/6)
+        end_pos = (j*squareSize + squareSize/2, (i)*squareSize + squareSize/6)
+
+        start_pos1 = (end_pos[0] -delta , end_pos[1] +delta)
+        start_pos2 = (end_pos[0] +delta , end_pos[1] +delta)
+    elif direction == "down":
+        start_pos = (j*squareSize + squareSize/2, (i)*squareSize + squareSize/6)
+        end_pos = (j*squareSize + squareSize/2, (i+1)*squareSize - squareSize/6)
+
+        start_pos1 = (end_pos[0] -delta , end_pos[1] -delta)
+        start_pos2 = (end_pos[0] +delta , end_pos[1] -delta)
+    elif direction == "left":
+        start_pos = ((j+1)*squareSize - squareSize/6, i*squareSize + squareSize/2)
+        end_pos = (j*squareSize + squareSize/6, i*squareSize + squareSize/2)
+
+        start_pos1 = (end_pos[0] +delta , end_pos[1] +delta)
+        start_pos2 = (end_pos[0] +delta , end_pos[1] -delta)
+    elif direction == "right":
+            start_pos = (j*squareSize + squareSize/6, i*squareSize + squareSize/2)
+            end_pos = ((j+1)*squareSize - squareSize/6, i*squareSize + squareSize/2)
+
+            start_pos1 = (end_pos[0] -delta , end_pos[1] +delta)
+            start_pos2 = (end_pos[0] -delta , end_pos[1] -delta)
+
+    pygame.draw.line(fenetre, color, start_pos, end_pos, 1)
+    pygame.draw.line(fenetre, color, start_pos1, end_pos, 1)
+    pygame.draw.line(fenetre, color, start_pos2, end_pos, 1)
+
+def drawPrevious(previous,fenetre, squareSize):
+    for current in previous.keys():
+        prev = previous[current]
+        if current[0] < prev[0]:
+            drawArrow(current[0],current[1],fenetre, squareSize,"down")
+        elif current[0] > prev[0] :
+            drawArrow(current[0],current[1],fenetre, squareSize,"up")
+        elif current[1] < prev[1] :
+            drawArrow(current[0],current[1],fenetre, squareSize,"right")
+        elif current[1] > prev[1] :
+            drawArrow(current[0],current[1],fenetre, squareSize,"left")
 
 ## Initialisation de la fenetre et création
 pygame.init()
@@ -170,6 +228,10 @@ end = (-1,-1)
 
 startDefine = False
 endDefine = False
+
+startedStep = False
+
+previous = {}
 
 path = []
 # Boucle des tours de jeu
@@ -202,12 +264,27 @@ while quitGame == False:
             path = runBreadthFirst(start,end, matrix)
             print (path)
 
+    # Step by Step
+    if touches[pygame.K_n]:
+        if (not start == (-1,-1)) and (not end == (-1,-1)):
+            if not startedStep :
+                toDo , alreadyDone, previous = initBreadth(start)
+                startedStep = True
+            elif toDo :
+                stepBreadthFirst(start, end, matrix, toDo, alreadyDone,previous)
+                #print(previous)
+            else :
+                path = getPath(start,end, previous)
+                startedStep = False
+
+
     ## In case of a click : let's do stuff
     for event in allEvents:   # parcours de la liste des evenements recus
         if event.type == pygame.MOUSEBUTTONUP:
             i,j = getMatrixPos(event.pos,squareSize)
             # the previously defined path is now pointless
             path = []
+            startedStep = False
             if startDefine :
                 # position of starting point
                 start = (i,j)
@@ -230,6 +307,10 @@ while quitGame == False:
     drawGrid(fenetre,squareSize)
     drawMatrix(matrix,fenetre,squareSize)
 
+    if startedStep :
+        drawDone(toDo,alreadyDone,fenetre,squareSize)
+    elif path :
+        drawPath(path,fenetre,squareSize)
 
 
     if not start == (-1,-1):
@@ -238,8 +319,8 @@ while quitGame == False:
     if not end == (-1,-1):
         drawEnd(end,fenetre, squareSize)
 
-    if path :
-        drawPath(path,fenetre,squareSize)
+    #drawArrow(0,1,fenetre,squareSize,"left")
+    drawPrevious(previous,fenetre, squareSize)
 
     pygame.display.flip()
 
