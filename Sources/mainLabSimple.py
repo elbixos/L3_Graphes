@@ -43,12 +43,15 @@ def getPath(start, end,previous):
     return path
 
 
-def runBreadthFirst(start,end, matrix):
+def initBreadth(start):
     toDo = [start]
     alreadyDone = []
     previous ={}
 
-    while toDo :
+    return toDo, alreadyDone,previous
+
+
+def stepBreadthFirst(start, end, matrix, toDo, alreadyDone, previous):
         current=toDo[0]
         #print ("processing", str(current))
 
@@ -60,6 +63,13 @@ def runBreadthFirst(start,end, matrix):
 
         toDo.remove(current)
         alreadyDone.append(current)
+
+
+def runBreadthFirst(start,end, matrix):
+    toDo , alreadyDone, previous = initBreadth(start)
+
+    while toDo :
+        stepBreadthFirst(start, end, matrix, toDo, alreadyDone,previous)
 
     #print (previous)
     path = getPath(start,end, previous)
@@ -89,7 +99,6 @@ def drawPath(path, fenetre,size):
 
     ## Horizontal lines
     for e in path :
-        print (e)
         rect = pygame.Rect(e[1]*size+1,e[0]*size+1,size-1,size-1)
         pygame.draw.rect(fenetre, color, rect, 0)
 
