@@ -43,7 +43,7 @@ def getPath(start, end,previous):
     return path
 
 
-def run(start,end, matrix):
+def runBreadthFirst(start,end, matrix):
     toDo = [start]
     alreadyDone = []
     previous ={}
@@ -190,7 +190,7 @@ while quitGame == False:
 
     if touches[pygame.K_r]:
         if (not start == (-1,-1)) and (not end == (-1,-1)):
-            path = run(start,end, matrix)
+            path = runBreadthFirst(start,end, matrix)
             print (path)
 
     ## In case of a click : let's do stuff
