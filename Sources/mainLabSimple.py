@@ -284,6 +284,7 @@ while quitGame == False:
             i,j = getMatrixPos(event.pos,squareSize)
             # the previously defined path is now pointless
             path = []
+            previous = {}
             startedStep = False
             if startDefine :
                 # position of starting point

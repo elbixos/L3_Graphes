@@ -11,3 +11,7 @@ L'interface est minimaliste :
 - appuyez sur "s" (start) puis cliquez sur une case pour définir le point de départ
 - appuyez sur "e" (end) puis cliquez sur une case pour définir l'arrivée
 - appuyez sur "r" (run) pour lancer la recherche de chemin
+- appuyez sur "n" (next) pour lancer la recherche de chemin step by step
+
+pour voir la table des predecesseurs en construction,
+lancer la recherche en step by step.
