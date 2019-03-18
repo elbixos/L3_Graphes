@@ -1,9 +1,51 @@
 # L3_Graphes
 Cours de Graphes et Applications, université des Antilles
 
-## Illustration du parcours en largeur :
+## Visualisation des graphes.
+Vous verrez que créer des petits graphes sera relativement facile avec notre
+librairie. Mais il nous faudra surtout visualiser ces graphes pour voir si nous avons
+bien crée le graphe que nous voulions.
 
-Le code est dans [Sources/mainLabSimple.py](Sources/mainLabSimple.py).
+Faire une librairie de visualisation de graphes efficace est très difficile
+(C'est un domaine de recherche en informatique). Nous allons donc utiliser une
+librairie existante, parmi les plus utilisées au monde : **graphviz**
+
+Pour la visualisation des graphes, chacun de nos graphes devra pouvoir être sauvegardé
+dans un fichier texte (format **.dot**) qui sera utilisé par la librairie
+**graphviz** pour la visualisation.
+Tout les fichiers d'exemples génère un fichier **.dot** que vous pourrez tester.
+
+La librairie s'installe facilement sur les machines linux.
+- Si c'est votre cas, vous pourrez utiliser le script **lancerGraphviz.sh** qui
+transforme chaque fichier **.dot** en fichier png.
+- Si vous ne pouvez pas installer **graphviz**, vous utiliserez une version
+online de graphviz. Il en existe beaucoup.
+[http://www.webgraphviz.com/](http://www.webgraphviz.com/) en est un bon exemple.
+Dans ce cas : ouvrez le fichier **.dot**, copiez son contenu et collez le dans
+le formulaire de la page dont je viens de vous fournir l'adresse.
+Appuyez sur "Generate Graph" et observez votre graphe...
+
+
+
+## La nouvelle librairie de graphes (en Python)
+
+Pour le moment sont implémentés :
+- les graphes orientés non valués.
+Le code est dans [Sources/OrientedGraph.py](Sources/OrientedGraph.py).
+Cette classe est exploitée par un main dans
+[Sources/testOrientedGraph.py](Sources/testOrientedGraph.py)
+Vous pouvez lancer ce fichier qui vous générera un fichier **.dot** fonctionnel.
+Je vous invite à regarder le contenu d'un fichier de type **.dot**...
+
+
+## Illustration du parcours en largeur :
+Au delà des parcours de Graphes dans des vrais graphes,
+il arrive que l'on utilise ces algorithmes sans même disposer d'une structure
+de graphes. C'est souvent le cas en Path Finding : la recherche d'un chemin dans un
+labyrinthe, que l'on retrouve souvent dans des jeux.
+
+Lancez le programme dont le code est dans [Sources/mainLabSimple.py](Sources/mainLabSimple.py).
+vous comprendrez mieux ensuite.
 
 L'interface est minimaliste :
 
@@ -15,3 +57,6 @@ L'interface est minimaliste :
 
 pour voir la table des predecesseurs en construction,
 lancer la recherche en step by step.
+
+
+Quel est le graphe qui est caché la dessous ?
