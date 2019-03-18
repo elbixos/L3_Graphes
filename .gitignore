@@ -1,3 +1,6 @@
+# dot files generated for tests
+*.dot
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
