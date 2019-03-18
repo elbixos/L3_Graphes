@@ -7,7 +7,7 @@ class OrientedGraph(object):
             The graph consists in a collection of arcs.
             the collection is a dictionnary.
             The key is a vertex (origin)
-            the value is the list of vertex (target) that are connected to origin,
+            the value is the list of vertices (target) that are connected to origin,
             so that origin -> target is an arc of the graph.
             """
         self.arcs = {}
@@ -28,8 +28,8 @@ class OrientedGraph(object):
 
     def addArc(self,origin, target):
         """Add an arc to the Graph.
-            If any vertex of the new arc does not belong to the Graph,
-            they are added to the Graph.
+            If a vertex of the new arc does not belong to the Graph,
+            it is added to the Graph.
             If the arc already belong to the graph, a message is written but nothing
             is done.
         """
@@ -54,7 +54,7 @@ class OrientedGraph(object):
             return []
 
     def getPrevious(self, v):
-        """Get the list of vertex that have v as a direct neighbor
+        """Get the list of vertices that have v as a direct neighbor
         """
         prev = []
         if v in self.arcs.keys():
@@ -75,14 +75,15 @@ class OrientedGraph(object):
         dotString = ""
         dotString+="digraph "+str(self.name) +" {\n"
         for origin in self.arcs.keys():
-            ### if the node as arcs starting from it, print them.
             if self.arcs[origin]:
                 ### if the node as arcs starting from it, print them.
                 for target in self.arcs[origin]:
                     dotString+="\t"+str(origin) + " -> " + str(target) + ";\n"
             else :
-                ### if the node is isolated, just note the node
-                dotString+="\t"+str(origin)+";\n"
+                # if the node is not the end of an arc, print it isolated
+                if self.getPrevious(origin) == []:
+                    ### if the node is isolated, just note the node
+                    dotString+="\t"+str(origin)+";\n"
 
         dotString +="}"
 
@@ -94,6 +95,18 @@ class OrientedGraph(object):
             f.close()
 
     def runBreadthFirst(self, start):
+        """ The BreadthFirstSearch Algorithm :
+            It will make a search of all accessible vertices, starting at vertex
+            *start*.
+
+            returns *previous* : a dictionnary that contains all recorded paths.
+            Each vertex accessible *k* is a key in the dictionnary. The value *v*
+            associated to *k* is the vertex from which one should arrive to reach *k*
+
+            Hence, one can retrieve a path from *start* to any vertex *a* accessible
+            by going backward in *previous* from *a* to its previous vertex and iterate
+            until *start* is found. This is done by the getPath method
+        """
         toDo = [start]
         alreadyDone = []
         previous ={}
@@ -114,6 +127,20 @@ class OrientedGraph(object):
         return previous
 
     def getPath(self,start, end,previous):
+        """ Most graph search returns a collection of recorded path from a certain
+        vertex *start* to all accessible vertices (except in the case of early exit).
+        These recorded paths can be implemented as a dictionnary called *previous*
+
+        *previous* : a dictionnary that contains all recorded paths.
+        Each vertex accessible *k* is a key in the dictionnary. The value *v*
+        associated to *k* is the vertex from which one should arrive to reach *k*
+
+        Hence, one can retrieve a path from *start* to any vertex *end* accessible
+        by going backward in *previous* from *end* to its previous vertex and iterate
+        until *start* is found.
+
+        returns a list of vertices found along the path from *start* to *end*
+        """
         #print (previous)
         path = [end]
         current = end
@@ -126,5 +153,12 @@ class OrientedGraph(object):
         return path
 
     def printPath(self,path):
+        """ A path is a list of vertices.
+        This function simply print every vertex in the path.
+
+        No verification is made that the list of vertices is really a path in
+        the graph (the vertices should be successive neighbors).
+        """
+
         for n in path :
             print(n, end=" ")
