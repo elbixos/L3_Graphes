@@ -1,4 +1,4 @@
-class OrientedGraph(object):
+class DirectedGraph(object):
     """The class that implements a directed Graph.
     """
 
