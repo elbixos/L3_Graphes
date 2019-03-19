@@ -30,13 +30,31 @@ Appuyez sur "Generate Graph" et observez votre graphe...
 ## La nouvelle librairie de graphes (en Python)
 
 Pour le moment sont implémentés :
-- les graphes orientés non valués.
-Le code est dans [Sources/DirectedGraph.py](Sources/DirectedGraph.py).
-Cette classe est exploitée par un main dans
+
+- les graphes orientés
+- les graphes non orientés
+- les graphes orientés valués
+- les graphes non orientés non valués
+
+La librairie est dans [Sources/GraphLib/](Sources/GraphLib)
+Chaque type de graphe à son fichier.
+Par exemple le graphe orienté est codé dans
+[Sources/GraphLibDirectedGraph.py](Sources/GraphLibDirectedGraph.py).
+
+Cette classe est exploitée par un main dans [Sources/GraphLib/](Sources/GraphLib).
+
+On pourra donc tester les graphes orientés avec le main contenu dans
 [Sources/testDirectedGraph.py](Sources/testDirectedGraph.py)
 Vous pouvez lancer ce fichier qui vous générera un fichier **.dot** fonctionnel.
 Je vous invite à regarder le contenu d'un fichier de type **.dot**...
 
+## documentation de la librairie :
+
+La librairie est autodocumentée. Le code contient des commentaires de type **docstring** que j'espere relativement clairs.
+
+Mais ce type de documentation permet aussi de générer une documentation qui permet de se servir des classes sans meme regarder le code.
+
+Cette documentation est visible depuis le fichier [Sources/docs/_build/html/index](Sources/docs/_build/html/index)
 
 ## Illustration du parcours en largeur :
 Au delà des parcours de Graphes dans des vrais graphes,
