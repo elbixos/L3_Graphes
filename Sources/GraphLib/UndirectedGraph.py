@@ -29,6 +29,15 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         GraphLib.DirectedGraph.DirectedGraph.addArc(self, origin, target)
         GraphLib.DirectedGraph.DirectedGraph.addArc(self, target, origin)
 
+    def arcToDotString(self, origin, target):
+        """ Produce the string corresponding to a an arc in a .dot file in the
+            context of this type of graph.
+
+            for undirected graphs it takes the form : "origin -- target ;"
+        """
+        return "\t"+str(origin) + " -- " + str(target) + ";\n"
+
+
     def toDotString(self, filename = None):
         """ Produce the string corresponding to a .dot output, as in the graphviz Library.
 
@@ -48,7 +57,7 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
                 for target in self.arcs[origin]:
                     ##
                     if not target in doneVertices :
-                        dotString+="\t"+str(origin) + " -- " + str(target) + ";\n"
+                        dotString+=self.arcToDotString(origin, target)
             else :
                 # if the node is not the end of an arc, print it isolated
                 if self.getPrevious(origin) == []:

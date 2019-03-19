@@ -69,7 +69,18 @@ class DirectedGraph(object):
             print ("This vertex does not belong to the Graph")
             return prev
 
-    def toDotString(self, filename = None):
+    def arcToDotString(self, origin, target):
+
+        """ Produce the string corresponding to an arc in a .dot file in the
+            context of this type of graph.
+
+            for directed graphs it takes the form : "origin -> target ;"
+        """
+        return "\t"+str(origin) + " -> " + str(target) + ";\n"
+
+
+
+    def toDotString(self):
         """ Produce the string corresponding to a .dot output, as in the graphviz Library.
         """
         dotString = ""
@@ -78,7 +89,7 @@ class DirectedGraph(object):
             if self.arcs[origin]:
                 ### if the node as arcs starting from it, print them.
                 for target in self.arcs[origin]:
-                    dotString+="\t"+str(origin) + " -> " + str(target) + ";\n"
+                    dotString+=self.arcToDotString(origin, target)
             else :
                 # if the node is not the end of an arc, print it isolated
                 if self.getPrevious(origin) == []:
@@ -95,7 +106,7 @@ class DirectedGraph(object):
             If a filename is given, the method will save the produced string in
             a file. If not, it will be printed.
         """
-        dotString = self.toDotString(filename)
+        dotString = self.toDotString()
         if filename == None :
             print (dotString)
         else :
