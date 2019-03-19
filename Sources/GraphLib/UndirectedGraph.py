@@ -9,6 +9,8 @@ import GraphLib.DirectedGraph
 
 class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
     """The class that implements an undirected Graph.
+
+    It is basically a directed Graph with symetrical arcs.
     """
 
     def __init__(self,name="", filename=None):

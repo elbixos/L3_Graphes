@@ -1,5 +1,7 @@
 class DirectedGraph(object):
     """The class that implements a directed Graph.
+
+    It's also the base class of all other Graphs.
     """
 
     def __init__(self,name="", filename=None):

@@ -44,6 +44,7 @@
 <em class="property">class </em><code class="descclassname">GraphLib.DirectedGraph.</code><code class="descname">DirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The class that implements a directed Graph.</p>
+<p>It’s also the base class of all other Graphs.</p>
 <dl class="method">
 <dt id="GraphLib.DirectedGraph.DirectedGraph.addArc">
 <code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
@@ -131,6 +132,7 @@ a file. If not, it will be printed.</p>
 <em class="property">class </em><code class="descclassname">GraphLib.UndirectedGraph.</code><code class="descname">UndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph" title="GraphLib.DirectedGraph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph</span></code></a></p>
 <p>The class that implements an undirected Graph.</p>
+<p>It is basically a directed Graph with symetrical arcs.</p>
 <dl class="method">
 <dt id="GraphLib.UndirectedGraph.UndirectedGraph.addArc">
 <code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
