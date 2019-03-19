@@ -20,29 +20,7 @@ GraphLib.UndirectedGraph module
     :undoc-members:
     :show-inheritance:
 
-GraphLib.mainLabSimple module
------------------------------
 
-.. automodule:: GraphLib.mainLabSimple
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-GraphLib.testDirectedGraph module
----------------------------------
-
-.. automodule:: GraphLib.testDirectedGraph
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-GraphLib.testUndirectedGraph module
------------------------------------
-
-.. automodule:: GraphLib.testUndirectedGraph
-    :members:
-    :undoc-members:
-    :show-inheritance:
 
 
 Module contents
