@@ -31,9 +31,9 @@ Appuyez sur "Generate Graph" et observez votre graphe...
 
 Pour le moment sont implémentés :
 - les graphes orientés non valués.
-Le code est dans [Sources/OrientedGraph.py](Sources/OrientedGraph.py).
+Le code est dans [Sources/DirectedGraph.py](Sources/DirectedGraph.py).
 Cette classe est exploitée par un main dans
-[Sources/testOrientedGraph.py](Sources/testOrientedGraph.py)
+[Sources/testDirectedGraph.py](Sources/testDirectedGraph.py)
 Vous pouvez lancer ce fichier qui vous générera un fichier **.dot** fonctionnel.
 Je vous invite à regarder le contenu d'un fichier de type **.dot**...
 

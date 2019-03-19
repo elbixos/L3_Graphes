@@ -1,6 +1,6 @@
-import OrientedGraph
+import DirectedGraph
 
-g = OrientedGraph.OrientedGraph(name="myKickAssGraph")
+g = DirectedGraph.DirectedGraph(name="myKickAssGraph")
 
 g.addArc("A", "B")
 g.addArc("B", "C")

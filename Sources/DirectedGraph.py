@@ -1,5 +1,5 @@
 class OrientedGraph(object):
-    """The class that implements an OrientedGraph.
+    """The class that implements a directed Graph.
     """
 
     def __init__(self,name="", filename=None):
