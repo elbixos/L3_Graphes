@@ -1,7 +1,8 @@
-import DirectedGraph
+import GraphLib.UndirectedGraph
 
-def myMainDirected():
-    g = DirectedGraph.DirectedGraph(name="myKickAssGraph")
+
+def myMainUndirected():
+    g = GraphLib.UndirectedGraph.UndirectedGraph(name="myKickAssGraph")
 
     g.addArc("A", "B")
     g.addArc("B", "C")
@@ -13,7 +14,7 @@ def myMainDirected():
 
     g.toDot()
 
-    g.toDot("bidon.dot")
+    g.toDot("undirectedBidon.dot")
 
     prev = g.runBreadthFirst("A")
 
@@ -22,6 +23,5 @@ def myMainDirected():
     g.printPath(chemin)
 
 
-
 if __name__ == '__main__':
-    myMainDirected()
+    myMainUndirected()

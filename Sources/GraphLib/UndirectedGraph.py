@@ -1,4 +1,11 @@
-from DirectedGraph import DirectedGraph
+import sys
+import os
+
+currentDir = os.path.dirname(os.path.abspath(__file__))
+upperDir = os.path.dirname(currentDir)
+sys.path.append(upperDir)
+
+from GraphLib.DirectedGraph import DirectedGraph
 
 class UndirectedGraph(DirectedGraph):
     """The class that implements an undirected Graph.
@@ -19,5 +26,3 @@ class UndirectedGraph(DirectedGraph):
         """
         DirectedGraph.addArc(self, origin, target)
         DirectedGraph.addArc(self, target, origin)
-
-    
