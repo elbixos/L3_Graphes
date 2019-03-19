@@ -3,7 +3,7 @@ class DirectedGraph(object):
     """
 
     def __init__(self,name="", filename=None):
-        """ initialize an oriented Graph.
+        """ initialize a directed Graph.
             The graph consists in a collection of arcs.
             the collection is a dictionnary.
             The key is a vertex (origin)
