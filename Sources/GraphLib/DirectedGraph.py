@@ -69,10 +69,8 @@ class DirectedGraph(object):
             print ("This vertex does not belong to the Graph")
             return prev
 
-    def toDot(self, filename = None):
-        """ Produce a .dot output, as in the graphviz Library.
-            If a filename is given, the method will save the produced string in
-            a file. If not, it will be printed.
+    def toDotString(self, filename = None):
+        """ Produce the string corresponding to a .dot output, as in the graphviz Library.
         """
         dotString = ""
         dotString+="digraph "+str(self.name) +" {\n"
@@ -89,6 +87,15 @@ class DirectedGraph(object):
 
         dotString +="}"
 
+        return dotString
+
+
+    def toDot(self, filename = None):
+        """ Produce a .dot output, as in the graphviz Library.
+            If a filename is given, the method will save the produced string in
+            a file. If not, it will be printed.
+        """
+        dotString = self.toDotString(filename)
         if filename == None :
             print (dotString)
         else :
