@@ -207,128 +207,133 @@ def drawPrevious(previous,fenetre, squareSize):
         elif current[1] > prev[1] :
             drawArrow(current[0],current[1],fenetre, squareSize,"left")
 
-## Initialisation de la fenetre et création
-pygame.init()
-#creation de la fenetre
 
-largeur = 640
-hauteur = 480
-fenetre=pygame.display.set_mode((largeur,hauteur))
+def mainLab():
+    ## Initialisation de la fenetre et création
+    pygame.init()
+    #creation de la fenetre
 
-quitGame = False
+    largeur = 640
+    hauteur = 480
+    fenetre=pygame.display.set_mode((largeur,hauteur))
 
-squareSize = 20
+    quitGame = False
 
-nLines, nCols = getSizes(fenetre,squareSize)
+    squareSize = 20
 
-matrix = np.zeros((nLines,nCols),dtype=int)
+    nLines, nCols = getSizes(fenetre,squareSize)
 
-start = (-1,-1)
-end = (-1,-1)
+    matrix = np.zeros((nLines,nCols),dtype=int)
 
-startDefine = False
-endDefine = False
+    start = (-1,-1)
+    end = (-1,-1)
 
-startedStep = False
+    startDefine = False
+    endDefine = False
 
-previous = {}
+    startedStep = False
 
-path = []
-# Boucle des tours de jeu
-horloge = pygame.time.Clock()
+    previous = {}
 
-while quitGame == False:
-    # on fixe la cadence
-    horloge.tick(20)
+    path = []
+    # Boucle des tours de jeu
+    horloge = pygame.time.Clock()
 
-    # on r�cup�re la pile d'evenements pour plus tard.
-    allEvents = pygame.event.get()
+    while quitGame == False:
+        # on fixe la cadence
+        horloge.tick(20)
 
-    # on r�cup�re aussi l'�tat des touches pour plus tard.
-    touches = pygame.key.get_pressed();
+        # on r�cup�re la pile d'evenements pour plus tard.
+        allEvents = pygame.event.get()
 
-    if touches[pygame.K_ESCAPE]:
-        quitGame = True
+        # on r�cup�re aussi l'�tat des touches pour plus tard.
+        touches = pygame.key.get_pressed();
 
-
-    if touches[pygame.K_s]:
-        startDefine = True
-        endDefine = False
-
-    if touches[pygame.K_e]:
-        endDefine = True
-        startDefine = False
-
-    if touches[pygame.K_r]:
-        if (not start == (-1,-1)) and (not end == (-1,-1)):
-            path = runBreadthFirst(start,end, matrix)
-            print (path)
-
-    # Step by Step
-    if touches[pygame.K_n]:
-        if (not start == (-1,-1)) and (not end == (-1,-1)):
-            if not startedStep :
-                toDo , alreadyDone, previous = initBreadth(start)
-                startedStep = True
-            elif toDo :
-                stepBreadthFirst(start, end, matrix, toDo, alreadyDone,previous)
-                #print(previous)
-            else :
-                path = getPath(start,end, previous)
-                startedStep = False
+        if touches[pygame.K_ESCAPE]:
+            quitGame = True
 
 
-    ## In case of a click : let's do stuff
-    for event in allEvents:   # parcours de la liste des evenements recus
-        if event.type == pygame.MOUSEBUTTONUP:
-            i,j = getMatrixPos(event.pos,squareSize)
-            # the previously defined path is now pointless
-            path = []
-            previous = {}
-            startedStep = False
-            if startDefine :
-                # position of starting point
-                start = (i,j)
-                matrix[i,j]=0
-                startDefine = False
+        if touches[pygame.K_s]:
+            startDefine = True
+            endDefine = False
 
-            elif endDefine :
-                # position of the ending point
-                end =(i,j)
-                matrix[i,j]=0
-                endDefine = False
-            else :
-                # Position a wall
-                if matrix [i,j] == 0:
-                    matrix[i,j]=1
+        if touches[pygame.K_e]:
+            endDefine = True
+            startDefine = False
+
+        if touches[pygame.K_r]:
+            if (not start == (-1,-1)) and (not end == (-1,-1)):
+                path = runBreadthFirst(start,end, matrix)
+                print (path)
+
+        # Step by Step
+        if touches[pygame.K_n]:
+            if (not start == (-1,-1)) and (not end == (-1,-1)):
+                if not startedStep :
+                    toDo , alreadyDone, previous = initBreadth(start)
+                    startedStep = True
+                elif toDo :
+                    stepBreadthFirst(start, end, matrix, toDo, alreadyDone,previous)
+                    #print(previous)
                 else :
+                    path = getPath(start,end, previous)
+                    startedStep = False
+
+
+        ## In case of a click : let's do stuff
+        for event in allEvents:   # parcours de la liste des evenements recus
+            if event.type == pygame.MOUSEBUTTONUP:
+                i,j = getMatrixPos(event.pos,squareSize)
+                # the previously defined path is now pointless
+                path = []
+                previous = {}
+                startedStep = False
+                if startDefine :
+                    # position of starting point
+                    start = (i,j)
                     matrix[i,j]=0
+                    startDefine = False
+
+                elif endDefine :
+                    # position of the ending point
+                    end =(i,j)
+                    matrix[i,j]=0
+                    endDefine = False
+                else :
+                    # Position a wall
+                    if matrix [i,j] == 0:
+                        matrix[i,j]=1
+                    else :
+                        matrix[i,j]=0
 
 
-    drawGrid(fenetre,squareSize)
-    drawMatrix(matrix,fenetre,squareSize)
+        drawGrid(fenetre,squareSize)
+        drawMatrix(matrix,fenetre,squareSize)
 
-    if startedStep :
-        drawDone(toDo,alreadyDone,fenetre,squareSize)
-    elif path :
-        drawPath(path,fenetre,squareSize)
-
-
-    if not start == (-1,-1):
-        drawStart(start,fenetre, squareSize)
-
-    if not end == (-1,-1):
-        drawEnd(end,fenetre, squareSize)
-
-    #drawArrow(0,1,fenetre,squareSize,"left")
-    drawPrevious(previous,fenetre, squareSize)
-
-    pygame.display.flip()
+        if startedStep :
+            drawDone(toDo,alreadyDone,fenetre,squareSize)
+        elif path :
+            drawPath(path,fenetre,squareSize)
 
 
-    # et on v�rifie si on a voulu quitter
-    for event in allEvents:   # parcours de la liste des evenements recus
-            if event.type == pygame.QUIT:     #Si un de ces evenements est de type QUIT
-                quitGame = True
+        if not start == (-1,-1):
+            drawStart(start,fenetre, squareSize)
 
-pygame.quit()
+        if not end == (-1,-1):
+            drawEnd(end,fenetre, squareSize)
+
+        #drawArrow(0,1,fenetre,squareSize,"left")
+        drawPrevious(previous,fenetre, squareSize)
+
+        pygame.display.flip()
+
+
+        # et on v�rifie si on a voulu quitter
+        for event in allEvents:   # parcours de la liste des evenements recus
+                if event.type == pygame.QUIT:     #Si un de ces evenements est de type QUIT
+                    quitGame = True
+
+    pygame.quit()
+
+if __name__ == '__main__':
+    mainLab()

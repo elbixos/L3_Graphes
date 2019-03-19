@@ -1,0 +1,284 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GraphLib package &#8212; GraphLib 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="graphlib-package">
+<h1>GraphLib package<a class="headerlink" href="#graphlib-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-GraphLib.DirectedGraph">
+<span id="graphlib-directedgraph-module"></span><h2>GraphLib.DirectedGraph module<a class="headerlink" href="#module-GraphLib.DirectedGraph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GraphLib.DirectedGraph.DirectedGraph">
+<em class="property">class </em><code class="descclassname">GraphLib.DirectedGraph.</code><code class="descname">DirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The class that implements a directed Graph.</p>
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.addArc">
+<code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an arc to the Graph.
+If a vertex of the new arc does not belong to the Graph,
+it is added to the Graph.
+If the arc already belong to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices (except in the case of early exit).
+These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
+<p><em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>.</p>
+<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
+by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
+until <em>start</em> is found. This is done by the getPath method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="graphlib-undirectedgraph-module">
+<h2>GraphLib.UndirectedGraph module<a class="headerlink" href="#graphlib-undirectedgraph-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-GraphLib.mainLabSimple">
+<span id="graphlib-mainlabsimple-module"></span><h2>GraphLib.mainLabSimple module<a class="headerlink" href="#module-GraphLib.mainLabSimple" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawArrow">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawArrow</code><span class="sig-paren">(</span><em>i</em>, <em>j</em>, <em>fenetre</em>, <em>squareSize</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawArrow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawDone">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawDone</code><span class="sig-paren">(</span><em>toDo</em>, <em>alreadyDone</em>, <em>fenetre</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawDone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawEnd">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawEnd</code><span class="sig-paren">(</span><em>pos</em>, <em>fenetre</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawEnd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawGrid">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawGrid</code><span class="sig-paren">(</span><em>fenetre</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawGrid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawMatrix">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawMatrix</code><span class="sig-paren">(</span><em>matrix</em>, <em>fenetre</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawMatrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawPath">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawPath</code><span class="sig-paren">(</span><em>path</em>, <em>fenetre</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawPrevious">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawPrevious</code><span class="sig-paren">(</span><em>previous</em>, <em>fenetre</em>, <em>squareSize</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawPrevious" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.drawStart">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">drawStart</code><span class="sig-paren">(</span><em>pos</em>, <em>fenetre</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.drawStart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.getMatrixPos">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">getMatrixPos</code><span class="sig-paren">(</span><em>event</em>, <em>squareSize</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.getMatrixPos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.getNeighbors">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>matrix</em>, <em>current</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.getPath">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.getPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.getSizes">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">getSizes</code><span class="sig-paren">(</span><em>fenetre</em>, <em>squareSize</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.getSizes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.initBreadth">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">initBreadth</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.initBreadth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.runBreadthFirst">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GraphLib.mainLabSimple.stepBreadthFirst">
+<code class="descclassname">GraphLib.mainLabSimple.</code><code class="descname">stepBreadthFirst</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>matrix</em>, <em>toDo</em>, <em>alreadyDone</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.mainLabSimple.stepBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="graphlib-testdirectedgraph-module">
+<h2>GraphLib.testDirectedGraph module<a class="headerlink" href="#graphlib-testdirectedgraph-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="graphlib-testundirectedgraph-module">
+<h2>GraphLib.testUndirectedGraph module<a class="headerlink" href="#graphlib-testundirectedgraph-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-GraphLib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-GraphLib" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">GraphLib</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Vincent Page.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/GraphLib.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
