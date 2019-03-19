@@ -1,36 +1,157 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GraphLib package &#8212; GraphLib 1.0 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GraphLib package &mdash; GraphLib 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="../index.html" class="icon icon-home"> GraphLib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">GraphLib package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-GraphLib.DirectedGraph">GraphLib.DirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib.UndirectedGraph">GraphLib.UndirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib.WeightedDirectedGraph">GraphLib.WeightedDirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib.WeightedUndirectedGraph">GraphLib.WeightedUndirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GraphLib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>GraphLib package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/GraphLib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="graphlib-package">
 <h1>GraphLib package<a class="headerlink" href="#graphlib-package" title="Permalink to this headline">¶</a></h1>
@@ -62,6 +183,14 @@ is done.</p>
 The resulting vertex is not connected to any other node of the Graph.
 If the vertex already belongs to the graph, a message is written but nothing
 is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.arcToDotString">
+<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to an arc in a .dot file in the
+context of this type of graph.</p>
+<p>for directed graphs it takes the form : “origin -&gt; target ;”</p>
 </dd></dl>
 
 <dl class="method">
@@ -122,6 +251,12 @@ If a filename is given, the method will save the produced string in
 a file. If not, it will be printed.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.toDotString">
+<code class="descname">toDotString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -143,6 +278,313 @@ If the arc already belong to the graph, a message is written but nothing
 is done.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.arcToDotString">
+<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to a an arc in a .dot file in the
+context of this type of graph.</p>
+<p>for undirected graphs it takes the form : “origin – target ;”</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices (except in the case of early exit).
+These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
+<p><em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>.</p>
+<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
+by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
+until <em>start</em> is found. This is done by the getPath method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.toDotString">
+<code class="descname">toDotString</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
+<p>It overrides the method of DirectedGraph since it’s quite different.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-GraphLib.WeightedDirectedGraph">
+<span id="graphlib-weighteddirectedgraph-module"></span><h2>GraphLib.WeightedDirectedGraph module<a class="headerlink" href="#module-GraphLib.WeightedDirectedGraph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph">
+<em class="property">class </em><code class="descclassname">GraphLib.WeightedDirectedGraph.</code><code class="descname">WeightedDirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph" title="GraphLib.DirectedGraph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph</span></code></a></p>
+<p>The class that implements an weighted directed Graph.</p>
+<p>It is basically a directed Graph where arcs have weights</p>
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addArc">
+<code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em>, <em>weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a weighted arc to the Graph.</p>
+<p>If a vertex of the new arc does not belong to the Graph,
+it is added to the Graph.
+If the arc already belong to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.arcToDotString">
+<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to a an arc in a .dot file in the
+context of this type of graph.</p>
+<dl class="docutils">
+<dt>for weighted directed graphs it takes the form :</dt>
+<dd>“origin -&gt; target [ label = “weight” ] ;”</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getArcWeight">
+<code class="descname">getArcWeight</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getArcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the weight of an arc in the graph</p>
+<p>If the arc does not belong to the graph, a key Exception is raised</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices (except in the case of early exit).
+These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
+<p><em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>.</p>
+<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
+by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
+until <em>start</em> is found. This is done by the getPath method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDotString">
+<code class="descname">toDotString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-GraphLib.WeightedUndirectedGraph">
+<span id="graphlib-weightedundirectedgraph-module"></span><h2>GraphLib.WeightedUndirectedGraph module<a class="headerlink" href="#module-GraphLib.WeightedUndirectedGraph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph">
+<em class="property">class </em><code class="descclassname">GraphLib.WeightedUndirectedGraph.</code><code class="descname">WeightedUndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GraphLib.UndirectedGraph.UndirectedGraph" title="GraphLib.UndirectedGraph.UndirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.UndirectedGraph.UndirectedGraph</span></code></a></p>
+<p>The class that implements an weighted undirected Graph.</p>
+<p>It is basically an undirected Graph where arcs have weights</p>
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addArc">
+<code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em>, <em>weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a weighted arc to the Graph.</p>
+<p>If a vertex of the new arc does not belong to the Graph,
+it is added to the Graph.
+If the arc already belong to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.arcToDotString">
+<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to a an arc in a .dot file in the
+context of this type of graph.</p>
+<dl class="docutils">
+<dt>for weighted undirected graphs it takes the form :</dt>
+<dd>“origin – target [ label = “weight” ] ;”</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getArcWeight">
+<code class="descname">getArcWeight</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getArcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the weight of an arc in the graph</p>
+<p>If the arc does not belong to the graph, a key Exception is raised</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices (except in the case of early exit).
+These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
+<p><em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>.</p>
+<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
+by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
+until <em>start</em> is found. This is done by the getPath method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDotString">
+<code class="descname">toDotString</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
+<p>It overrides the method of DirectedGraph since it’s quite different.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -152,68 +594,43 @@ is done.</p>
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">GraphLib</a></h1>
+          <footer>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Vincent Page
 
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2019, Vincent Page.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../_sources/source/GraphLib.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

@@ -20,7 +20,21 @@ GraphLib.UndirectedGraph module
     :undoc-members:
     :show-inheritance:
 
+GraphLib.WeightedDirectedGraph module
+-------------------------------------
 
+.. automodule:: GraphLib.WeightedDirectedGraph
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+GraphLib.WeightedUndirectedGraph module
+---------------------------------------
+
+.. automodule:: GraphLib.WeightedUndirectedGraph
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 
 Module contents
