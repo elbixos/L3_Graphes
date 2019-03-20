@@ -13,7 +13,7 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
     It is basically a directed Graph with symetrical arcs.
     """
 
-    def __init__(self,name="", filename=None):
+    def __init__(self,name=""):
         """ initialize an undirected Graph.
         It is basically a directed Graph with symetrical arcs.
         """

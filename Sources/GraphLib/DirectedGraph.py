@@ -4,7 +4,7 @@ class DirectedGraph(object):
     It's also the base class of all other Graphs.
     """
 
-    def __init__(self,name="", filename=None):
+    def __init__(self,name=""):
         """ initialize a directed Graph.
             The graph consists in a collection of arcs.
             the collection is a dictionnary.
@@ -15,17 +15,17 @@ class DirectedGraph(object):
         self.arcs = {}
         self.name = name
 
-    def addVertex(self,n):
+    def addVertex(self,v):
         """Add a vertex to the graph.
             The resulting vertex is not connected to any other node of the Graph.
             If the vertex already belongs to the graph, a message is written but nothing
             is done.
         """
 
-        if n in self.arcs.keys():
-            print ("vertex ",str(n), "is already in the graph")
+        if v in self.arcs.keys():
+            print ("vertex ",str(v), "is already in the graph")
         else :
-            self.arcs[n]=[]
+            self.arcs[v]=[]
 
 
     def addArc(self,origin, target):

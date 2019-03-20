@@ -162,7 +162,7 @@
 <span id="graphlib-directedgraph-module"></span><h2>GraphLib.DirectedGraph module<a class="headerlink" href="#module-GraphLib.DirectedGraph" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="GraphLib.DirectedGraph.DirectedGraph">
-<em class="property">class </em><code class="descclassname">GraphLib.DirectedGraph.</code><code class="descname">DirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GraphLib.DirectedGraph.</code><code class="descname">DirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The class that implements a directed Graph.</p>
 <p>It’s also the base class of all other Graphs.</p>
@@ -264,7 +264,7 @@ a file. If not, it will be printed.</p>
 <span id="graphlib-undirectedgraph-module"></span><h2>GraphLib.UndirectedGraph module<a class="headerlink" href="#module-GraphLib.UndirectedGraph" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="GraphLib.UndirectedGraph.UndirectedGraph">
-<em class="property">class </em><code class="descclassname">GraphLib.UndirectedGraph.</code><code class="descname">UndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GraphLib.UndirectedGraph.</code><code class="descname">UndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph" title="GraphLib.DirectedGraph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph</span></code></a></p>
 <p>The class that implements an undirected Graph.</p>
 <p>It is basically a directed Graph with symetrical arcs.</p>
@@ -367,7 +367,7 @@ a file. If not, it will be printed.</p>
 <span id="graphlib-weighteddirectedgraph-module"></span><h2>GraphLib.WeightedDirectedGraph module<a class="headerlink" href="#module-GraphLib.WeightedDirectedGraph" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph">
-<em class="property">class </em><code class="descclassname">GraphLib.WeightedDirectedGraph.</code><code class="descname">WeightedDirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GraphLib.WeightedDirectedGraph.</code><code class="descname">WeightedDirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph" title="GraphLib.DirectedGraph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph</span></code></a></p>
 <p>The class that implements an weighted directed Graph.</p>
 <p>It is basically a directed Graph where arcs have weights</p>
@@ -406,6 +406,30 @@ context of this type of graph.</p>
 <code class="descname">getArcWeight</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getArcWeight" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the weight of an arc in the graph</p>
 <p>If the arc does not belong to the graph, a key Exception is raised</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getMinDistance_">
+<code class="descname">getMinDistance_</code><span class="sig-paren">(</span><em>toDo</em>, <em>distances</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getMinDistance_" title="Permalink to this definition">¶</a></dt>
+<dd><p>An intern function for the Diskstra Algorithm :
+it looks in the toDo list which vertex is the closest to <em>start</em></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>toDo</strong> – the list of vertices to examine</li>
+<li><strong>distances</strong> – a dictionnary of distances (usually to <em>start</em> vertex)
+- the key is a vertex <em>v</em>
+- the value is the distance from <em>start</em> to <em>v</em></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">minVertex: the vertex in toDo with the smallest distance.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -456,6 +480,44 @@ associated to <em>k</em> is the vertex from which one should arrive to reach <em
 <p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
 by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
 until <em>start</em> is found. This is done by the getPath method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra">
+<code class="descname">runDijkstra</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Diskstra Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em> and compute the smallest path to all of them, taking the weights
+of arcs into account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>start</strong> – the starting vertex of the search.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(previous, distances)
+- previous : a dictionnary that contains all recorded paths.
+Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
+associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em>
+- distances : a dictionnary of the distance from <em>start</em> to every
+accessible vertex in the graph.<blockquote>
+<div><ul class="simple">
+<li>the key is a vertex <em>v</em></li>
+<li>the value is the distance from <em>start</em> to <em>v</em></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
+by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
+until <em>start</em> is found. This is done by the getPath method</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The search for a current vertex to explore is not at all optimal
+in the current implementation. A priority queue should be used instead.</p>
+</div>
 </dd></dl>
 
 <dl class="method">

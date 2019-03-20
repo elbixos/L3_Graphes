@@ -13,7 +13,7 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
     It is basically a directed Graph where arcs have weights
     """
 
-    def __init__(self,name="", filename=None):
+    def __init__(self,name=""):
         """ initialize a weighted directed Graph.
         It is basically a directed Graph where arcs have weights (float)
 
@@ -84,15 +84,20 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
                 - previous : a dictionnary that contains all recorded paths.
                 Each vertex accessible *k* is a key in the dictionnary. The value *v*
                 associated to *k* is the vertex from which one should arrive to reach *k*
-
                 - distances : a dictionnary of the distance from *start* to every
                 accessible vertex in the graph.
+
                     - the key is a vertex *v*
                     - the value is the distance from *start* to *v*
 
             Hence, one can retrieve a path from *start* to any vertex *a* accessible
             by going backward in *previous* from *a* to its previous vertex and iterate
             until *start* is found. This is done by the getPath method
+
+            .. warning::
+                The search for a current vertex to explore is not at all optimal
+                in the current implementation. A priority queue should be used instead.
+                
         """
         toDo = [start]
         alreadyDone = []
