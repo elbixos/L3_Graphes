@@ -35,7 +35,7 @@ Pour le moment sont implémentés :
 - les graphes orientés
 - les graphes non orientés
 - les graphes orientés valués
-- les graphes non orientés non valués
+- les graphes non orientés valués
 
 La librairie est dans [Sources/GraphLib/](Sources/GraphLib)
 Chaque type de graphe à son fichier.
