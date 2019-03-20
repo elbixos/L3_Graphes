@@ -186,17 +186,17 @@ is done.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="GraphLib.DirectedGraph.DirectedGraph.arcToDotString">
-<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to an arc in a .dot file in the
-context of this type of graph.</p>
-<p>for directed graphs it takes the form : “origin -&gt; target ;”</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="GraphLib.DirectedGraph.DirectedGraph.getNeighbors">
 <code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of direct neighbors from vertex v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -218,6 +218,14 @@ until <em>start</em> is found.</p>
 <dt id="GraphLib.DirectedGraph.DirectedGraph.getPrevious">
 <code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -288,17 +296,17 @@ is done.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="GraphLib.UndirectedGraph.UndirectedGraph.arcToDotString">
-<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to a an arc in a .dot file in the
-context of this type of graph.</p>
-<p>for undirected graphs it takes the form : “origin – target ;”</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="GraphLib.UndirectedGraph.UndirectedGraph.getNeighbors">
 <code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of direct neighbors from vertex v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -320,6 +328,14 @@ until <em>start</em> is found.</p>
 <dt id="GraphLib.UndirectedGraph.UndirectedGraph.getPrevious">
 <code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -391,17 +407,6 @@ is done.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.arcToDotString">
-<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to a an arc in a .dot file in the
-context of this type of graph.</p>
-<dl class="docutils">
-<dt>for weighted directed graphs it takes the form :</dt>
-<dd>“origin -&gt; target [ label = “weight” ] ;”</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
 <dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getArcWeight">
 <code class="descname">getArcWeight</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getArcWeight" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the weight of an arc in the graph</p>
@@ -409,33 +414,17 @@ context of this type of graph.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getMinDistance_">
-<code class="descname">getMinDistance_</code><span class="sig-paren">(</span><em>toDo</em>, <em>distances</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getMinDistance_" title="Permalink to this definition">¶</a></dt>
-<dd><p>An intern function for the Diskstra Algorithm :
-it looks in the toDo list which vertex is the closest to <em>start</em></p>
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>toDo</strong> – the list of vertices to examine</li>
-<li><strong>distances</strong> – a dictionnary of distances (usually to <em>start</em> vertex)
-- the key is a vertex <em>v</em>
-- the value is the distance from <em>start</em> to <em>v</em></li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">minVertex: the vertex in toDo with the smallest distance.</p>
-</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors">
-<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the list of direct neighbors from vertex v</p>
 </dd></dl>
 
 <dl class="method">
@@ -457,6 +446,14 @@ until <em>start</em> is found.</p>
 <dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPrevious">
 <code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -541,10 +538,11 @@ a file. If not, it will be printed.</p>
 <span id="graphlib-weightedundirectedgraph-module"></span><h2>GraphLib.WeightedUndirectedGraph module<a class="headerlink" href="#module-GraphLib.WeightedUndirectedGraph" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph">
-<em class="property">class </em><code class="descclassname">GraphLib.WeightedUndirectedGraph.</code><code class="descname">WeightedUndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GraphLib.WeightedUndirectedGraph.</code><code class="descname">WeightedUndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#GraphLib.UndirectedGraph.UndirectedGraph" title="GraphLib.UndirectedGraph.UndirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.UndirectedGraph.UndirectedGraph</span></code></a></p>
 <p>The class that implements an weighted undirected Graph.</p>
-<p>It is basically an undirected Graph where arcs have weights</p>
+<p>It is basically an undirected Graph where arcs have weights
+A graph can have a name, only is used in the .dot output</p>
 <dl class="method">
 <dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addArc">
 <code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em>, <em>weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
@@ -565,17 +563,6 @@ is done.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.arcToDotString">
-<code class="descname">arcToDotString</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.arcToDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to a an arc in a .dot file in the
-context of this type of graph.</p>
-<dl class="docutils">
-<dt>for weighted undirected graphs it takes the form :</dt>
-<dd>“origin – target [ label = “weight” ] ;”</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
 <dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getArcWeight">
 <code class="descname">getArcWeight</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getArcWeight" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the weight of an arc in the graph</p>
@@ -586,6 +573,14 @@ context of this type of graph.</p>
 <dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getNeighbors">
 <code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of direct neighbors from vertex v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -607,6 +602,14 @@ until <em>start</em> is found.</p>
 <dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPrevious">
 <code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">

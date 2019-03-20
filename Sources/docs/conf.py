@@ -36,7 +36,6 @@ autodoc_default_flags = [
      # Make sure that any autodoc declarations show the right members
      "members",
      "inherited-members",
-     "private-members",
      "show-inheritance",
 ]
 autosummary_generate = True  # Make _autosummary files and include them

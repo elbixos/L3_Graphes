@@ -29,8 +29,8 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         GraphLib.DirectedGraph.DirectedGraph.addArc(self, origin, target)
         GraphLib.DirectedGraph.DirectedGraph.addArc(self, target, origin)
 
-    def arcToDotString(self, origin, target):
-        """ Produce the string corresponding to a an arc in a .dot file in the
+    def _arcToDotString(self, origin, target):
+        """ An intern function to produce the string corresponding to a an arc in a .dot file in the
             context of this type of graph.
 
             for undirected graphs it takes the form : "origin -- target ;"
@@ -57,7 +57,7 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
                 for target in self.arcs[origin]:
                     ##
                     if not target in doneVertices :
-                        dotString+=self.arcToDotString(origin, target)
+                        dotString+=self._arcToDotString(origin, target)
             else :
                 # if the node is not the end of an arc, print it isolated
                 if self.getPrevious(origin) == []:

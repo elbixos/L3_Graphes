@@ -12,6 +12,7 @@ GraphLib.DirectedGraph module
     :undoc-members:
     :show-inheritance:
 
+
 GraphLib.UndirectedGraph module
 -------------------------------
 

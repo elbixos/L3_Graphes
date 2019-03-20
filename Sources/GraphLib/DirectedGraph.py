@@ -48,6 +48,8 @@ class DirectedGraph(object):
 
     def getNeighbors(self, v):
         """Get the list of direct neighbors from vertex v
+
+            :return: the list of vertices directly accessible from v
         """
         if v in self.arcs.keys():
             return self.arcs[v]
@@ -57,6 +59,12 @@ class DirectedGraph(object):
 
     def getPrevious(self, v):
         """Get the list of vertices that have v as a direct neighbor
+
+            :return: the list of vertices that give direct access to v
+
+            .. warning:
+                This is time consuming ans not at all optimized in the current
+                implementation. use only in small graphs.
         """
         prev = []
         if v in self.arcs.keys():
@@ -69,9 +77,8 @@ class DirectedGraph(object):
             print ("This vertex does not belong to the Graph")
             return prev
 
-    def arcToDotString(self, origin, target):
-
-        """ Produce the string corresponding to an arc in a .dot file in the
+    def _arcToDotString(self, origin, target):
+        """An intern function to produce the string corresponding to an arc in a .dot file in the
             context of this type of graph.
 
             for directed graphs it takes the form : "origin -> target ;"
@@ -89,7 +96,7 @@ class DirectedGraph(object):
             if self.arcs[origin]:
                 ### if the node as arcs starting from it, print them.
                 for target in self.arcs[origin]:
-                    dotString+=self.arcToDotString(origin, target)
+                    dotString+=self._arcToDotString(origin, target)
             else :
                 # if the node is not the end of an arc, print it isolated
                 if self.getPrevious(origin) == []:

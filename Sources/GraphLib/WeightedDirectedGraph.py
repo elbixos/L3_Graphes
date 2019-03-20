@@ -42,9 +42,9 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         """
         return self.weights[(origin,target)]
 
-    def arcToDotString(self, origin, target):
-        """ Produce the string corresponding to a an arc in a .dot file in the
-            context of this type of graph.
+    def _arcToDotString(self, origin, target):
+        """ An intern function to produce the string corresponding to a an arc
+            in a .dot file in the context of this type of graph.
 
             for weighted directed graphs it takes the form :
                 "origin -> target [ label = "weight" ] ;"
@@ -52,7 +52,7 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         return "\t"+str(origin) + " -> " + str(target) + "[ label = \"" \
             +str(self.getArcWeight(origin, target)) + "\"];\n"
 
-    def getMinDistance_(self,toDo, distances):
+    def _getMinDistance(self,toDo, distances):
         """ An intern function for the Diskstra Algorithm :
             it looks in the toDo list which vertex is the closest to *start*
 
@@ -97,7 +97,7 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
             .. warning::
                 The search for a current vertex to explore is not at all optimal
                 in the current implementation. A priority queue should be used instead.
-                
+
         """
         toDo = [start]
         alreadyDone = []
@@ -105,7 +105,7 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         distances = {start : 0.0}
 
         while toDo :
-            current=self.getMinDistance_(toDo, distances)
+            current=self._getMinDistance(toDo, distances)
             #print ("processing", str(current))
 
             for s in self.getNeighbors(current) :

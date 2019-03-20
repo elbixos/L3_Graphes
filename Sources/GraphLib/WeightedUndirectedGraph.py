@@ -11,9 +11,11 @@ class WeightedUndirectedGraph(GraphLib.UndirectedGraph.UndirectedGraph):
     """The class that implements an weighted undirected Graph.
 
     It is basically an undirected Graph where arcs have weights
+    A graph can have a name, only is used in the .dot output
+
     """
 
-    def __init__(self,name="", filename=None):
+    def __init__(self,name=""):
         """ initialize a weighted undirected Graph.
         It is basically an undirected Graph where arcs have weights (float)
 
@@ -42,8 +44,8 @@ class WeightedUndirectedGraph(GraphLib.UndirectedGraph.UndirectedGraph):
         """
         return self.weights[(origin,target)]
 
-    def arcToDotString(self, origin, target):
-        """ Produce the string corresponding to a an arc in a .dot file in the
+    def _arcToDotString(self, origin, target):
+        """ An intern function to produce the string corresponding to a an arc in a .dot file in the
             context of this type of graph.
 
             for weighted undirected graphs it takes the form :
