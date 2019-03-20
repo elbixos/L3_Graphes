@@ -40,7 +40,7 @@ Pour le moment sont implémentés :
 La librairie est dans [Sources/GraphLib/](Sources/GraphLib)
 Chaque type de graphe à son fichier.
 Par exemple le graphe orienté est codé dans
-[Sources/GraphLibDirectedGraph.py](Sources/GraphLibDirectedGraph.py).
+[Sources/GraphLib/DirectedGraph.py](Sources/GraphLib/DirectedGraph.py).
 
 Cette classe est exploitée par un main dans [Sources/GraphLib/](Sources/GraphLib).
 
