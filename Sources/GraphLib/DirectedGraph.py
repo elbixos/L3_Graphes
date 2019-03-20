@@ -78,7 +78,7 @@ class DirectedGraph(object):
             return prev
 
     def _arcToDotString(self, origin, target):
-        """An intern function to produce the string corresponding to an arc in a .dot file in the
+        """An internalfunction to produce the string corresponding to an arc in a .dot file in the
             context of this type of graph.
 
             for directed graphs it takes the form : "origin -> target ;"
@@ -87,8 +87,9 @@ class DirectedGraph(object):
 
 
 
-    def toDotString(self):
-        """ Produce the string corresponding to a .dot output, as in the graphviz Library.
+    def _toDotString(self):
+        """ An internalfunction to produce the string corresponding to a .dot
+            output, as in the graphviz Library.
         """
         dotString = ""
         dotString+="digraph "+str(self.name) +" {\n"
@@ -113,7 +114,7 @@ class DirectedGraph(object):
             If a filename is given, the method will save the produced string in
             a file. If not, it will be printed.
         """
-        dotString = self.toDotString()
+        dotString = self._toDotString()
         if filename == None :
             print (dotString)
         else :

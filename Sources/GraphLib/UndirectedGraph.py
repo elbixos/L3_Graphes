@@ -30,7 +30,7 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         GraphLib.DirectedGraph.DirectedGraph.addArc(self, target, origin)
 
     def _arcToDotString(self, origin, target):
-        """ An intern function to produce the string corresponding to a an arc in a .dot file in the
+        """ An internalfunction to produce the string corresponding to a an arc in a .dot file in the
             context of this type of graph.
 
             for undirected graphs it takes the form : "origin -- target ;"
@@ -38,8 +38,8 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         return "\t"+str(origin) + " -- " + str(target) + ";\n"
 
 
-    def toDotString(self, filename = None):
-        """ Produce the string corresponding to a .dot output, as in the graphviz Library.
+    def _toDotString(self, filename = None):
+        """ An internal function  to produce the string corresponding to a .dot output, as in the graphviz Library.
 
         It overrides the method of DirectedGraph since it's quite different.
         """

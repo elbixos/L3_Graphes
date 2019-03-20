@@ -45,7 +45,7 @@ class WeightedUndirectedGraph(GraphLib.UndirectedGraph.UndirectedGraph):
         return self.weights[(origin,target)]
 
     def _arcToDotString(self, origin, target):
-        """ An intern function to produce the string corresponding to a an arc in a .dot file in the
+        """ An internalfunction to produce the string corresponding to a an arc in a .dot file in the
             context of this type of graph.
 
             for weighted undirected graphs it takes the form :

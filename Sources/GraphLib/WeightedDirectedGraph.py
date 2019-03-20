@@ -43,7 +43,7 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         return self.weights[(origin,target)]
 
     def _arcToDotString(self, origin, target):
-        """ An intern function to produce the string corresponding to a an arc
+        """ An internal function to produce the string corresponding to a an arc
             in a .dot file in the context of this type of graph.
 
             for weighted directed graphs it takes the form :
@@ -53,7 +53,7 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
             +str(self.getArcWeight(origin, target)) + "\"];\n"
 
     def _getMinDistance(self,toDo, distances):
-        """ An intern function for the Diskstra Algorithm :
+        """ An internal function for the Diskstra Algorithm :
             it looks in the toDo list which vertex is the closest to *start*
 
             :param toDo: the list of vertices to examine
