@@ -55,7 +55,11 @@ La librairie est autodocumentée. Le code contient des commentaires de type **do
 
 Mais ce type de documentation permet aussi de générer une documentation qui permet de se servir des classes sans meme regarder le code.
 
-Cette documentation est visible depuis le fichier [Sources/docs/_build/html/index.html](Sources/docs/_build/html/index.html)
+**ATTENTION :** Cette documentation n'est pas visible depuis les pages github (je n'y arrive pas !). Donc inutile de cliquer sur le lien ci dessous...
+En revanche, si vous clonez ou downloadez le projet L3_Graphes,
+cette documentation est visible depuis le fichier *Sources/docs/_build/html/index.html*
+
+
 
 ## Illustration du parcours en largeur :
 Au delà des parcours de Graphes dans des vrais graphes,
