@@ -51,3 +51,75 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         """
         return "\t"+str(origin) + " -> " + str(target) + "[ label = \"" \
             +str(self.getArcWeight(origin, target)) + "\"];\n"
+
+    def getMinDistance_(self,toDo, distances):
+        """ An intern function for the Diskstra Algorithm :
+            it looks in the toDo list which vertex is the closest to *start*
+
+            :param toDo: the list of vertices to examine
+            :param distances: a dictionnary of distances (usually to *start* vertex)
+                    - the key is a vertex *v*
+                    - the value is the distance from *start* to *v*
+
+            :return: minVertex: the vertex in toDo with the smallest distance.
+        """
+        minVertex = toDo[0]
+        minDist = distances[minVertex]
+        for v in toDo:
+            if distances[v] < minDist:
+                minDist = distances[v]
+                minVertex = v
+        return minVertex
+
+
+    def runDijkstra(self, start):
+        """ The Diskstra Algorithm :
+            It will make a search of all accessible vertices, starting at vertex
+            *start* and compute the smallest path to all of them, taking the weights
+            of arcs into account.
+
+            :param start: the starting vertex of the search.
+
+            :return: (previous, distances)
+                - previous : a dictionnary that contains all recorded paths.
+                Each vertex accessible *k* is a key in the dictionnary. The value *v*
+                associated to *k* is the vertex from which one should arrive to reach *k*
+
+                - distances : a dictionnary of the distance from *start* to every
+                accessible vertex in the graph.
+                    - the key is a vertex *v*
+                    - the value is the distance from *start* to *v*
+
+            Hence, one can retrieve a path from *start* to any vertex *a* accessible
+            by going backward in *previous* from *a* to its previous vertex and iterate
+            until *start* is found. This is done by the getPath method
+        """
+        toDo = [start]
+        alreadyDone = []
+        previous ={}
+        distances = {start : 0.0}
+
+        while toDo :
+            current=self.getMinDistance_(toDo, distances)
+            #print ("processing", str(current))
+
+            for s in self.getNeighbors(current) :
+                #print (s)
+                if (not s in alreadyDone):
+                    # compute the distance of the new path
+                    newDist = distances[current]+self.getArcWeight(current,s)
+                    ## did we see it before ?
+                    if not s in distances.keys():
+                        previous[s]=current
+                        distances[s]= newDist
+                        toDo.append(s)
+                    else :
+                        oldDist = distances[s]
+                        if newDist < oldDist :
+                            previous[s]=current
+                            distances[s]= newDist
+
+            toDo.remove(current)
+            alreadyDone.append(current)
+
+        return previous, distances

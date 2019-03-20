@@ -182,3 +182,4 @@ class DirectedGraph(object):
 
         for n in path :
             print(n, end=" ")
+        print("")

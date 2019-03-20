@@ -5,9 +5,12 @@ def myMainWeightedDirected():
     g = GraphLib.WeightedDirectedGraph.WeightedDirectedGraph(name="myKickAssGraph")
 
     g.addArc("A", "B")
-    g.addArc("B", "C",3.0)
-    g.addArc("A", "C",2.0)
-    g.addArc("B", "D")
+    g.addArc("A", "C",4.0)
+
+    g.addArc("B", "C",2.0)
+    g.addArc("B", "D",6.0)
+
+    g.addArc("C", "D",1.0)
 
     g.addVertex("X")
     g.addVertex("Y")
@@ -21,12 +24,26 @@ def myMainWeightedDirected():
 
     g.toDot("bidonWeighted.dot")
 
+    start ="A"
+    end = "D"
+    print("\nBreadthFirstSearch from ",start)
     prev = g.runBreadthFirst("A")
 
-    chemin = g.getPath("A","D",prev)
+    chemin = g.getPath(start,end,prev)
 
+    print("Path from ",start, " to ",end)
     g.printPath(chemin)
 
+
+    start ="A"
+    end = "D"
+    print("\nDijkstraa from ",start)
+    prev,dist = g.runDijkstra(start)
+
+    chemin = g.getPath(start,end,prev)
+    print("Path from ",start, " to ",end)
+    g.printPath(chemin)
+    print("distance from ",start, " to ",end,dist[end])
 
 
 if __name__ == '__main__':
