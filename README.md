@@ -55,9 +55,9 @@ La librairie est autodocumentée. Le code contient des commentaires de type **do
 
 Mais ce type de documentation permet aussi de générer une documentation qui permet de se servir des classes sans meme regarder le code.
 
-**ATTENTION :** Cette documentation n'est pas visible depuis les pages github (je n'y arrive pas !). Donc inutile de cliquer sur le lien ci dessous...
-En revanche, si vous clonez ou downloadez le projet L3_Graphes,
-cette documentation est visible depuis le fichier *Sources/docs/_build/html/index.html*
+**ATTENTION :** Cette documentation n'est pas visible depuis les pages github (je n'y arrive pas !). En revanche, si vous clonez ou downloadez
+le projet L3_Graphes, cette documentation est visible depuis le fichier
+*Sources/docs/_build/html/index.html*
 
 
 
