@@ -5,6 +5,7 @@ currentDir = os.path.dirname(os.path.abspath(__file__))
 upperDir = os.path.dirname(currentDir)
 sys.path.append(upperDir)
 
+import GraphLib.WeightedDirectedGraph
 import GraphLib.UndirectedGraph
 
 class WeightedUndirectedGraph(GraphLib.UndirectedGraph.UndirectedGraph):
@@ -53,3 +54,13 @@ class WeightedUndirectedGraph(GraphLib.UndirectedGraph.UndirectedGraph):
         """
         return "\t"+str(origin) + " -- " + str(target) + "[ label = \"" \
             +str(self.getArcWeight(origin, target)) + "\"];\n"
+
+    def runDijkstra(self, start):
+        """ The Diskstra Algorithm :
+
+            Information about this function can be found there :
+            :py:meth:`GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra`
+            It is the one that is really called...
+
+        """
+        return GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra(self,start)

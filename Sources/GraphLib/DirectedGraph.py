@@ -2,6 +2,9 @@ class DirectedGraph(object):
     """The class that implements a directed Graph.
 
     It's also the base class of all other Graphs.
+
+    :param name: a graph optionnaly has a name. It is only used by
+        :py:meth:`GraphLib.DirectedGraph.DirectedGraph.toDot`.
     """
 
     def __init__(self,name=""):
@@ -78,7 +81,7 @@ class DirectedGraph(object):
             return prev
 
     def _arcToDotString(self, origin, target):
-        """An internalfunction to produce the string corresponding to an arc in a .dot file in the
+        """An internal function to produce the string corresponding to an arc in a .dot file in the
             context of this type of graph.
 
             for directed graphs it takes the form : "origin -> target ;"
@@ -88,7 +91,7 @@ class DirectedGraph(object):
 
 
     def _toDotString(self):
-        """ An internalfunction to produce the string corresponding to a .dot
+        """ An internal function to produce the string corresponding to a .dot
             output, as in the graphviz Library.
         """
         dotString = ""
@@ -125,15 +128,11 @@ class DirectedGraph(object):
     def runBreadthFirst(self, start):
         """ The BreadthFirstSearch Algorithm :
             It will make a search of all accessible vertices, starting at vertex
-            *start*.
+            *start*, following the Breadth First Search algorithm.
 
-            returns *previous* : a dictionnary that contains all recorded paths.
-            Each vertex accessible *k* is a key in the dictionnary. The value *v*
-            associated to *k* is the vertex from which one should arrive to reach *k*
-
-            Hence, one can retrieve a path from *start* to any vertex *a* accessible
-            by going backward in *previous* from *a* to its previous vertex and iterate
-            until *start* is found. This is done by the getPath method
+            :returns: previous : a dictionnary that contains all recorded paths.
+                See :py:meth:`GraphLib.DirectedGraph.DirectedGraph.getPath`
+                for a good description of this dictionary and its usage.
         """
         toDo = [start]
         alreadyDone = []
@@ -155,19 +154,36 @@ class DirectedGraph(object):
         return previous
 
     def getPath(self,start, end,previous):
-        """ Most graph search returns a collection of recorded path from a certain
-        vertex *start* to all accessible vertices (except in the case of early exit).
-        These recorded paths can be implemented as a dictionnary called *previous*
+        """ Get the succession of vertices on the path from vertex *start*
+            to vertex *end*. Paths are stored in *previous*.
 
-        *previous* : a dictionnary that contains all recorded paths.
-        Each vertex accessible *k* is a key in the dictionnary. The value *v*
-        associated to *k* is the vertex from which one should arrive to reach *k*
+            :param start: the starting point of the path.
+            :param end: the ending point of the path.
+            :param previous: a way to store paths. It should be obtained by a
+                search in the graph such as
+                :py:meth:`GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst`
+                before this method is called. see below for more information of
+                this structure
 
-        Hence, one can retrieve a path from *start* to any vertex *end* accessible
-        by going backward in *previous* from *end* to its previous vertex and iterate
-        until *start* is found.
+            :returns: a list of vertices found along the path from *start* to *end*
 
-        returns a list of vertices found along the path from *start* to *end*
+            Structure of the previous parameter :
+
+                Most graph search returns a collection of recorded path from a certain
+                vertex *start* to all accessible vertices.
+                These recorded paths can be implemented as a dictionnary called *previous*
+                *previous* is constructed as follows :
+
+                - Each vertex *k* accessible from *start* is a key in the dictionnary.
+
+                - The value *v* associated to *k* is the vertex from which one
+                  should arrive to reach *k* on the path from *start* to *k*
+
+                  Hence, one can retrieve a path from *start* to any vertex *end* accessible
+                  by going backward in *previous* from *end* to its previous vertex and iterate
+                  until *start* is found.
+
+
         """
         #print (previous)
         path = [end]

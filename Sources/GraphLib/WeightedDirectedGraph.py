@@ -80,19 +80,9 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
 
             :param start: the starting vertex of the search.
 
-            :return: (previous, distances)
-                - previous : a dictionnary that contains all recorded paths.
-                Each vertex accessible *k* is a key in the dictionnary. The value *v*
-                associated to *k* is the vertex from which one should arrive to reach *k*
-                - distances : a dictionnary of the distance from *start* to every
-                accessible vertex in the graph.
-
-                    - the key is a vertex *v*
-                    - the value is the distance from *start* to *v*
-
-            Hence, one can retrieve a path from *start* to any vertex *a* accessible
-            by going backward in *previous* from *a* to its previous vertex and iterate
-            until *start* is found. This is done by the getPath method
+            :returns: previous : a dictionnary that contains all recorded paths.
+                See :py:meth:`GraphLib.DirectedGraph.DirectedGraph.getPath`
+                for a good description of this dictionary and its usage.
 
             .. warning::
                 The search for a current vertex to explore is not at all optimal
@@ -105,7 +95,7 @@ class WeightedDirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
         distances = {start : 0.0}
 
         while toDo :
-            current=self._getMinDistance(toDo, distances)
+            current=GraphLib.WeightedDirectedGraph.WeightedDirectedGraph._getMinDistance(self,toDo, distances)
             #print ("processing", str(current))
 
             for s in self.getNeighbors(current) :

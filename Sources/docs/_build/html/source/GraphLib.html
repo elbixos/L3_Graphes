@@ -166,6 +166,15 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The class that implements a directed Graph.</p>
 <p>It’s also the base class of all other Graphs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – a graph optionnaly has a name. It is only used by
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.toDot" title="GraphLib.DirectedGraph.DirectedGraph.toDot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.toDot()</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="GraphLib.DirectedGraph.DirectedGraph.addArc">
 <code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
@@ -202,16 +211,45 @@ is done.</p>
 <dl class="method">
 <dt id="GraphLib.DirectedGraph.DirectedGraph.getPath">
 <code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
-<dd><p>Most graph search returns a collection of recorded path from a certain
-vertex <em>start</em> to all accessible vertices (except in the case of early exit).
-These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
-<p><em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
 <p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
 by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
 until <em>start</em> is found.</p>
-<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</li>
+</ul>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -242,13 +280,17 @@ the graph (the vertices should be successive neighbors).</p>
 <code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BreadthFirstSearch Algorithm :
 It will make a search of all accessible vertices, starting at vertex
-<em>start</em>.</p>
-<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
-<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
-by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
-until <em>start</em> is found. This is done by the getPath method</p>
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -257,12 +299,6 @@ until <em>start</em> is found. This is done by the getPath method</p>
 <dd><p>Produce a .dot output, as in the graphviz Library.
 If a filename is given, the method will save the produced string in
 a file. If not, it will be printed.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="GraphLib.DirectedGraph.DirectedGraph.toDotString">
-<code class="descname">toDotString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
 </dd></dl>
 
 </dd></dl>
@@ -312,16 +348,45 @@ is done.</p>
 <dl class="method">
 <dt id="GraphLib.UndirectedGraph.UndirectedGraph.getPath">
 <code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
-<dd><p>Most graph search returns a collection of recorded path from a certain
-vertex <em>start</em> to all accessible vertices (except in the case of early exit).
-These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
-<p><em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
 <p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
 by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
 until <em>start</em> is found.</p>
-<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</li>
+</ul>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -352,13 +417,17 @@ the graph (the vertices should be successive neighbors).</p>
 <code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BreadthFirstSearch Algorithm :
 It will make a search of all accessible vertices, starting at vertex
-<em>start</em>.</p>
-<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
-<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
-by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
-until <em>start</em> is found. This is done by the getPath method</p>
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -367,13 +436,6 @@ until <em>start</em> is found. This is done by the getPath method</p>
 <dd><p>Produce a .dot output, as in the graphviz Library.
 If a filename is given, the method will save the produced string in
 a file. If not, it will be printed.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="GraphLib.UndirectedGraph.UndirectedGraph.toDotString">
-<code class="descname">toDotString</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
-<p>It overrides the method of DirectedGraph since it’s quite different.</p>
 </dd></dl>
 
 </dd></dl>
@@ -430,16 +492,45 @@ is done.</p>
 <dl class="method">
 <dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPath">
 <code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
-<dd><p>Most graph search returns a collection of recorded path from a certain
-vertex <em>start</em> to all accessible vertices (except in the case of early exit).
-These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
-<p><em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
 <p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
 by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
 until <em>start</em> is found.</p>
-<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</li>
+</ul>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -470,13 +561,17 @@ the graph (the vertices should be successive neighbors).</p>
 <code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BreadthFirstSearch Algorithm :
 It will make a search of all accessible vertices, starting at vertex
-<em>start</em>.</p>
-<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
-<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
-by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
-until <em>start</em> is found. This is done by the getPath method</p>
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -492,24 +587,12 @@ of arcs into account.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>start</strong> – the starting vertex of the search.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(previous, distances)
-- previous : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em>
-- distances : a dictionnary of the distance from <em>start</em> to every
-accessible vertex in the graph.<blockquote>
-<div><ul class="simple">
-<li>the key is a vertex <em>v</em></li>
-<li>the value is the distance from <em>start</em> to <em>v</em></li>
-</ul>
-</div></blockquote>
-</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
 </tr>
 </tbody>
 </table>
-<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
-by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
-until <em>start</em> is found. This is done by the getPath method</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The search for a current vertex to explore is not at all optimal
@@ -523,12 +606,6 @@ in the current implementation. A priority queue should be used instead.</p>
 <dd><p>Produce a .dot output, as in the graphviz Library.
 If a filename is given, the method will save the produced string in
 a file. If not, it will be printed.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDotString">
-<code class="descname">toDotString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
 </dd></dl>
 
 </dd></dl>
@@ -586,16 +663,45 @@ is done.</p>
 <dl class="method">
 <dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPath">
 <code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
-<dd><p>Most graph search returns a collection of recorded path from a certain
-vertex <em>start</em> to all accessible vertices (except in the case of early exit).
-These recorded paths can be implemented as a dictionnary called <em>previous</em></p>
-<p><em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
 <p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
 by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
 until <em>start</em> is found.</p>
-<p>returns a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</li>
+</ul>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -626,13 +732,26 @@ the graph (the vertices should be successive neighbors).</p>
 <code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BreadthFirstSearch Algorithm :
 It will make a search of all accessible vertices, starting at vertex
-<em>start</em>.</p>
-<p>returns <em>previous</em> : a dictionnary that contains all recorded paths.
-Each vertex accessible <em>k</em> is a key in the dictionnary. The value <em>v</em>
-associated to <em>k</em> is the vertex from which one should arrive to reach <em>k</em></p>
-<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>a</em> accessible
-by going backward in <em>previous</em> from <em>a</em> to its previous vertex and iterate
-until <em>start</em> is found. This is done by the getPath method</p>
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runDijkstra">
+<code class="descname">runDijkstra</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runDijkstra" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Diskstra Algorithm :</p>
+<p>Information about this function can be found there :
+<a class="reference internal" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra" title="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra()</span></code></a>
+It is the one that is really called…</p>
 </dd></dl>
 
 <dl class="method">
@@ -641,13 +760,6 @@ until <em>start</em> is found. This is done by the getPath method</p>
 <dd><p>Produce a .dot output, as in the graphviz Library.
 If a filename is given, the method will save the produced string in
 a file. If not, it will be printed.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDotString">
-<code class="descname">toDotString</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDotString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce the string corresponding to a .dot output, as in the graphviz Library.</p>
-<p>It overrides the method of DirectedGraph since it’s quite different.</p>
 </dd></dl>
 
 </dd></dl>

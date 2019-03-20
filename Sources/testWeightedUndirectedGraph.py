@@ -21,12 +21,25 @@ def myMainWeightedUndirected():
 
     g.toDot("bidonWeightedUndirected.dot")
 
+    start ="A"
+    end = "D"
+    print("\nBreadthFirstSearch from ",start)
     prev = g.runBreadthFirst("A")
 
-    chemin = g.getPath("A","D",prev)
+    chemin = g.getPath(start,end,prev)
 
+    print("Path from ",start, " to ",end)
     g.printPath(chemin)
 
+    start ="A"
+    end = "D"
+    print("\nDijkstraa from ",start)
+    prev,dist = g.runDijkstra(start)
+
+    chemin = g.getPath(start,end,prev)
+    print("Path from ",start, " to ",end)
+    g.printPath(chemin)
+    print("distance from ",start, " to ",end,dist[end])
 
 
 if __name__ == '__main__':
