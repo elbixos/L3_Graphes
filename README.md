@@ -42,7 +42,7 @@ Chaque type de graphe à son fichier.
 Par exemple le graphe orienté est codé dans
 [Sources/GraphLib/DirectedGraph.py](Sources/GraphLib/DirectedGraph.py).
 
-Cette classe est exploitée par un main dans [Sources/GraphLib/](Sources/GraphLib).
+Chaque classe est exploitée par un main situé dans [Sources/](Sources/).
 
 On pourra donc tester les graphes orientés avec le main contenu dans
 [Sources/testDirectedGraph.py](Sources/testDirectedGraph.py)
