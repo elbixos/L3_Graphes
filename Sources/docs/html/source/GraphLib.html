@@ -1,0 +1,813 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GraphLib package &mdash; GraphLib 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GraphLib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">GraphLib package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-GraphLib.DirectedGraph">GraphLib.DirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib.UndirectedGraph">GraphLib.UndirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib.WeightedDirectedGraph">GraphLib.WeightedDirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib.WeightedUndirectedGraph">GraphLib.WeightedUndirectedGraph module</a></li>
+<li><a class="reference internal" href="#module-GraphLib">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GraphLib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>GraphLib package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/GraphLib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="graphlib-package">
+<h1>GraphLib package<a class="headerlink" href="#graphlib-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-GraphLib.DirectedGraph">
+<span id="graphlib-directedgraph-module"></span><h2>GraphLib.DirectedGraph module<a class="headerlink" href="#module-GraphLib.DirectedGraph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GraphLib.DirectedGraph.DirectedGraph">
+<em class="property">class </em><code class="descclassname">GraphLib.DirectedGraph.</code><code class="descname">DirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The class that implements a directed Graph.</p>
+<p>It’s also the base class of all other Graphs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – a graph optionnaly has a name. It is only used by
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.toDot" title="GraphLib.DirectedGraph.DirectedGraph.toDot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.toDot()</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.addArc">
+<code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an arc to the Graph.
+If a vertex of the new arc does not belong to the Graph,
+it is added to the Graph.
+If the arc already belong to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.DirectedGraph.DirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.DirectedGraph.DirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-GraphLib.UndirectedGraph">
+<span id="graphlib-undirectedgraph-module"></span><h2>GraphLib.UndirectedGraph module<a class="headerlink" href="#module-GraphLib.UndirectedGraph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph">
+<em class="property">class </em><code class="descclassname">GraphLib.UndirectedGraph.</code><code class="descname">UndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph" title="GraphLib.DirectedGraph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph</span></code></a></p>
+<p>The class that implements an undirected Graph.</p>
+<p>It is basically a directed Graph with symetrical arcs.</p>
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.addArc">
+<code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an undirected arc to the Graph.
+If a vertex of the new arc does not belong to the Graph,
+it is added to the Graph.
+If the arc already belong to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.UndirectedGraph.UndirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.UndirectedGraph.UndirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-GraphLib.WeightedDirectedGraph">
+<span id="graphlib-weighteddirectedgraph-module"></span><h2>GraphLib.WeightedDirectedGraph module<a class="headerlink" href="#module-GraphLib.WeightedDirectedGraph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph">
+<em class="property">class </em><code class="descclassname">GraphLib.WeightedDirectedGraph.</code><code class="descname">WeightedDirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph" title="GraphLib.DirectedGraph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph</span></code></a></p>
+<p>The class that implements an weighted directed Graph.</p>
+<p>It is basically a directed Graph where arcs have weights</p>
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addArc">
+<code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em>, <em>weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a weighted arc to the Graph.</p>
+<p>If a vertex of the new arc does not belong to the Graph,
+it is added to the Graph.
+If the arc already belong to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getArcWeight">
+<code class="descname">getArcWeight</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getArcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the weight of an arc in the graph</p>
+<p>If the arc does not belong to the graph, a key Exception is raised</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra">
+<code class="descname">runDijkstra</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Diskstra Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em> and compute the smallest path to all of them, taking the weights
+of arcs into account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>start</strong> – the starting vertex of the search.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The search for a current vertex to explore is not at all optimal
+in the current implementation. A priority queue should be used instead.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-GraphLib.WeightedUndirectedGraph">
+<span id="graphlib-weightedundirectedgraph-module"></span><h2>GraphLib.WeightedUndirectedGraph module<a class="headerlink" href="#module-GraphLib.WeightedUndirectedGraph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph">
+<em class="property">class </em><code class="descclassname">GraphLib.WeightedUndirectedGraph.</code><code class="descname">WeightedUndirectedGraph</code><span class="sig-paren">(</span><em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GraphLib.UndirectedGraph.UndirectedGraph" title="GraphLib.UndirectedGraph.UndirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphLib.UndirectedGraph.UndirectedGraph</span></code></a></p>
+<p>The class that implements an weighted undirected Graph.</p>
+<p>It is basically an undirected Graph where arcs have weights
+A graph can have a name, only is used in the .dot output</p>
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addArc">
+<code class="descname">addArc</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em>, <em>weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addArc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a weighted arc to the Graph.</p>
+<p>If a vertex of the new arc does not belong to the Graph,
+it is added to the Graph.
+If the arc already belong to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addVertex">
+<code class="descname">addVertex</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.addVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a vertex to the graph.
+The resulting vertex is not connected to any other node of the Graph.
+If the vertex already belongs to the graph, a message is written but nothing
+is done.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getArcWeight">
+<code class="descname">getArcWeight</code><span class="sig-paren">(</span><em>origin</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getArcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the weight of an arc in the graph</p>
+<p>If the arc does not belong to the graph, a key Exception is raised</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getNeighbors">
+<code class="descname">getNeighbors</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of direct neighbors from vertex v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices directly accessible from v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>previous</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the succession of vertices on the path from vertex <em>start</em>
+to vertex <em>end</em>. Paths are stored in <em>previous</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> – the starting point of the path.</li>
+<li><strong>end</strong> – the ending point of the path.</li>
+<li><strong>previous</strong> – a way to store paths. It should be obtained by a
+search in the graph such as
+<a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst" title="GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.runBreadthFirst()</span></code></a>
+before this method is called. see below for more information of
+this structure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of vertices found along the path from <em>start</em> to <em>end</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Structure of the previous parameter :</p>
+<blockquote>
+<div><p>Most graph search returns a collection of recorded path from a certain
+vertex <em>start</em> to all accessible vertices.
+These recorded paths can be implemented as a dictionnary called <em>previous</em>
+<em>previous</em> is constructed as follows :</p>
+<ul>
+<li><p class="first">Each vertex <em>k</em> accessible from <em>start</em> is a key in the dictionnary.</p>
+</li>
+<li><p class="first">The value <em>v</em> associated to <em>k</em> is the vertex from which one
+should arrive to reach <em>k</em> on the path from <em>start</em> to <em>k</em></p>
+<p>Hence, one can retrieve a path from <em>start</em> to any vertex <em>end</em> accessible
+by going backward in <em>previous</em> from <em>end</em> to its previous vertex and iterate
+until <em>start</em> is found.</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPrevious">
+<code class="descname">getPrevious</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.getPrevious" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of vertices that have v as a direct neighbor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of vertices that give direct access to v</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.printPath">
+<code class="descname">printPath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.printPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path is a list of vertices.
+This function simply print every vertex in the path.</p>
+<p>No verification is made that the list of vertices is really a path in
+the graph (the vertices should be successive neighbors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runBreadthFirst">
+<code class="descname">runBreadthFirst</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runBreadthFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BreadthFirstSearch Algorithm :
+It will make a search of all accessible vertices, starting at vertex
+<em>start</em>, following the Breadth First Search algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">previous : a dictionnary that contains all recorded paths.
+See <a class="reference internal" href="#GraphLib.DirectedGraph.DirectedGraph.getPath" title="GraphLib.DirectedGraph.DirectedGraph.getPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.DirectedGraph.DirectedGraph.getPath()</span></code></a>
+for a good description of this dictionary and its usage.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runDijkstra">
+<code class="descname">runDijkstra</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.runDijkstra" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Diskstra Algorithm :</p>
+<p>Information about this function can be found there :
+<a class="reference internal" href="#GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra" title="GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GraphLib.WeightedDirectedGraph.WeightedDirectedGraph.runDijkstra()</span></code></a>
+It is the one that is really called…</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDot">
+<code class="descname">toDot</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GraphLib.WeightedUndirectedGraph.WeightedUndirectedGraph.toDot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a .dot output, as in the graphviz Library.
+If a filename is given, the method will save the produced string in
+a file. If not, it will be printed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-GraphLib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-GraphLib" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Vincent Page
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
