@@ -134,8 +134,13 @@ class DirectedGraph(object):
                 See :py:meth:`GraphLib.DirectedGraph.DirectedGraph.getPath`
                 for a good description of this dictionary and its usage.
         """
+
         toDo = [start]
-        alreadyDone = []
+        # in BreadthFirstSearch algorithm, toDo is a FIFO.
+        # beginning of the queue is at index 0 of the list.
+        # new elements are put at the end of the list
+
+        alreadyDone = set() # a HashSet...
         previous ={}
 
         while toDo :
@@ -149,7 +154,7 @@ class DirectedGraph(object):
                     toDo.append(s)
 
             toDo.remove(current)
-            alreadyDone.append(current)
+            alreadyDone.add(current)
 
         return previous
 
