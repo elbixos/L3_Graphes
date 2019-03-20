@@ -1,6 +1,7 @@
 # L3_Graphes
 Cours de Graphes et Applications, université des Antilles
 
+
 ## Visualisation des graphes.
 Vous verrez que créer des petits graphes sera relativement facile avec notre
 librairie. Mais il nous faudra surtout visualiser ces graphes pour voir si nous avons
@@ -21,7 +22,7 @@ transforme chaque fichier **.dot** en fichier png.
 - Si vous ne pouvez pas installer **graphviz**, vous utiliserez une version
 online de graphviz. Il en existe beaucoup.
 [http://www.webgraphviz.com/](http://www.webgraphviz.com/) en est un bon exemple.
-Dans ce cas : ouvrez le fichier **.dot**, copiez son contenu et collez le dans
+Dans ce cas : ouvrez un fichier **.dot**, copiez son contenu et collez le dans
 le formulaire de la page dont je viens de vous fournir l'adresse.
 Appuyez sur "Generate Graph" et observez votre graphe...
 
