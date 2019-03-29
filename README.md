@@ -83,3 +83,7 @@ lancer la recherche en step by step.
 
 
 Quel est le graphe qui est caché la dessous ?
+
+## Le cours :
+- [Cours 1](Cours/01_cours1.md)
+- [Cours 2](Cours/01_cours2.md)
