@@ -120,7 +120,7 @@ def drawGrid(fenetre,size):
     color = (255,255,255)
 
     w,h = fenetre.get_size()
-    nLines, nCols = getSizes(fenetre,squareSize)
+    nLines, nCols = getSizes(fenetre,size)
 
     ## Horizontal lines
     for i in range(nLines) :
@@ -150,7 +150,7 @@ def drawEnd(pos,fenetre,size):
 def drawMatrix(matrix,fenetre,size):
     color = (128,128,128)
 
-    nLines, nCols = getSizes(fenetre,squareSize)
+    nLines, nCols = getSizes(fenetre,size)
 
     ## Horizontal lines
     for i in range(nLines) :
