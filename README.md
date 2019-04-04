@@ -52,7 +52,7 @@ Je vous invite à regarder le contenu d'un fichier de type **.dot**...
 Le fichier [Sources/gwadada.py](Sources/gwadada.py) crée un graphe simplifié
 du réseau routier de Guadeloupe, avec comme poids d'aretes le temps approximatif
 de route entre deux villes. Notez que la visualisation ne prend que très
-partiellement en compte la géographie de notre pays...
+partiellement en compte la géographie de notre pays... (je n'ai pas inséré la Désirade et les Saintes par manque de temps. Désolé)
 
 ![Sources/gwadaRoads.dot.jpg](Sources/gwadaRoads.dot.jpg)
 
