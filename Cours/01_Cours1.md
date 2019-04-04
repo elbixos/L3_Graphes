@@ -6,15 +6,30 @@ grandes lignes de ce que nous avons vu en cours.
 
 Graphes, a quoi ca sert ?
 
-des algos de parcours : quel objectif ?
-relation locale -> relation globale
+Dans les graphes, on effectuera souvent des algos de parcours. Mais pourquoi ?
+
+Le plus souvent : une **relation locale** facile à exprimer permet, grâce au
+parcours de graphe, de mettre a jour une **relation globale**.
+
+Par exemple :
+1. Il est facile de définir, dans un fichier d'état civil, qui sont
+les parents directs d'une personne. A partir du graphe dont les sommets seraient
+des personnes et une arête représenterait cette relation locale (parent direct),
+un parcours depuis un individu vous donnerait tous les membres de sa famille
+(la relation globale, invisible sans le graphe)
+
+2. A partir d'une carte de Guadeloupe, il est facile de voir quelles sont les
+villes directement voisines par la route (Le Moule / St Anne). Un parcours vous
+indiquera quelle villes peuvent être atteintes depuis le Moule (3 rivières, oui,
+mais capesterre de Marie Galante, non...)
+
 
 ### Fonctionnement général des parcours
 
 Imaginons un graphe *g*, dans lequel je veuille faire un parcours avec un départ
 depuis le sommet *start*
 
-Nous avons vu quel était l'algorithme général des parcours :
+Voici l'algorithme général des parcours :
 il nous faut 2 ensembles :
 - **toDo** : les sommets dont qu'on a croisé, mais pas traité
 - **alreadyDone** : les sommets qu'on a traité.
@@ -23,9 +38,11 @@ A la fin de l'execution, **alreadyDone** contiendra l'ensemble des sommets
 visités pendant le parcours.
 
 J'ai, dans le code suivant inventé les méthodes
-- *getCurrent*
-- *addWhereNeeded*
-qui vont varier d'un parcours à l'autre.
+- *getCurrent* : qui nous dit quel sommet des sommets à faire doit devenir
+le sommet courant.
+- *addWhereNeeded* : qui ajoute un sommet à la liste des sommets à faire
+
+Ces deux méthodes vont varier d'un parcours à l'autre.
 
 ```python
 toDo = [start]
@@ -45,7 +62,7 @@ while toDo :
 ```
 
 ### Retenir les chemins : La table de prédécesseurs.
-Savoir quels sommets peuvent être atteints est important, mais connaitre un
+Savoir quels sommets peuvent être atteints est important, mais connaître un
 chemin pour les atteindre, c'est mieux !
 
 Or un parcours nous indique, pour chaque sommet, comment l'atteindre (la
@@ -54,10 +71,7 @@ C'est cette information que l'on va retenir dans une **table de prédécesseurs*
 
 AJOUTER Illustration et fonctionnement de cette table, vue en cours.
 
-
-
-
-A la fin de l'execution, **alreadyDone** aura comme clefs l'ensemble des sommets
+A la fin de l'execution, **previous** aura comme clefs l'ensemble des sommets
 visités pendant le parcours et la valeur associée à un sommet *k* sera le sommet
 par lequel on accède à *k* lors du chemin de *start* à *k*.
 
@@ -93,9 +107,6 @@ Pour implémenter une File avec des tableaux, on peut par exemple :
 
 ```python
 toDo = [start]
-# in BreadthFirstSearch algorithm, toDo is a FIFO.
-# beginning of the queue is at index 0 of the list.
-# new elements are put at the end of the list
 
 alreadyDone = set() # a HashSet...
 previous ={}

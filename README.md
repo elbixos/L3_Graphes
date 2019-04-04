@@ -49,6 +49,13 @@ On pourra donc tester les graphes orientés avec le main contenu dans
 Vous pouvez lancer ce fichier qui vous générera un fichier **.dot** fonctionnel.
 Je vous invite à regarder le contenu d'un fichier de type **.dot**...
 
+Le fichier [Sources/gwadada.py](Sources/gwadada.py) crée un graphe simplifié
+du réseau routier de Guadeloupe, avec comme poids d'aretes le temps approximatif
+de route entre deux villes. Notez que la visualisation ne prend que très
+partiellement en compte la géographie de notre pays...
+
+![Sources/gwadaRoads.dot.jpg](Sources/gwadaRoads.dot.jpg)
+
 ## documentation de la librairie :
 
 La librairie est autodocumentée. Le code contient des commentaires de type **docstring** que j'espere relativement clairs.
@@ -67,7 +74,7 @@ il arrive que l'on utilise ces algorithmes sans même disposer d'une structure
 de graphes. C'est souvent le cas en Path Finding : la recherche d'un chemin dans un
 labyrinthe, que l'on retrouve souvent dans des jeux.
 
-Lancez le programme dont le code est dans [Sources/mainLabSimple.py](Sources/mainLabSimple.py).
+Lancez le programme dont le code est dans ![Sources/mainLabSimple.py](Sources/mainLabSimple.py).
 vous comprendrez mieux ensuite.
 
 L'interface est minimaliste :

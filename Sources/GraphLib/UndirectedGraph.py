@@ -35,7 +35,9 @@ class UndirectedGraph(GraphLib.DirectedGraph.DirectedGraph):
 
             for undirected graphs it takes the form : "origin -- target ;"
         """
-        return "\t"+str(origin) + " -- " + str(target) + ";\n"
+        newOriginName = "_".join(str(origin).split() )
+        newTargetName = "_".join(str(target).split() )
+        return "\t"+newOriginName + " -- " + newTargetName + ";\n"
 
 
     def _toDotString(self, filename = None):

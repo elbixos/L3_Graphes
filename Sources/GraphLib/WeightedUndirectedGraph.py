@@ -37,6 +37,7 @@ class WeightedUndirectedGraph(GraphLib.UndirectedGraph.UndirectedGraph):
         """
         GraphLib.UndirectedGraph.UndirectedGraph.addArc(self, origin, target)
         self.weights[(origin,target)] = float(weight)
+        self.weights[(target,origin)] = float(weight)
 
     def getArcWeight (self, origin, target):
         """get the weight of an arc in the graph
@@ -52,7 +53,9 @@ class WeightedUndirectedGraph(GraphLib.UndirectedGraph.UndirectedGraph):
             for weighted undirected graphs it takes the form :
                 "origin -- target [ label = "weight" ] ;"
         """
-        return "\t"+str(origin) + " -- " + str(target) + "[ label = \"" \
+        newOriginName = "_".join(str(origin).split() )
+        newTargetName = "_".join(str(target).split() )
+        return "\t"+newOriginName + " -- " + newTargetName + "[ label = \"" \
             +str(self.getArcWeight(origin, target)) + "\"];\n"
 
     def runDijkstra(self, start):
