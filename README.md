@@ -118,5 +118,6 @@ lancer la recherche en step by step.
 Quel est le graphe qui est caché la dessous ?
 
 ## Le cours :
+- [Introduction](Cours/00_Intro.md)
 - [Cours 1](Cours/01_Cours1.md)
 - [Cours 2](Cours/02_Cours2.md)
