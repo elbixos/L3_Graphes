@@ -1,11 +1,20 @@
 # L3_Graphes
-Cours de Graphes et Applications, université des Antilles
+Cours de Graphes et Applications, université des Antilles,
+en Licence Informatique 3eme année. Partie V. Pagé.
 
+Vous trouverez au sein de ce projet :
+- une librairie en Python permettant de manipuler des Graphes
+- les supports de cours et de TP
+- une application des parcours de graphes aux problèmes
+de recherche de chemins (ou **pathfinding**) dans les jeux vidéo (pour ceux
+que cela intéresse, je vous recommande l'excellent site
+[https://www.redblobgames.com/](https://www.redblobgames.com/) qui parle
+de ceci et de bien d'autres choses...).
 
 ## Visualisation des graphes.
 Vous verrez que créer des petits graphes sera relativement facile avec notre
-librairie. Mais il nous faudra surtout visualiser ces graphes pour voir si nous avons
-bien crée le graphe que nous voulions.
+librairie. Mais il nous faudra surtout visualiser ces graphes pour voir si nous
+avons bien crée le graphe que nous voulions.
 
 Faire une librairie de visualisation de graphes efficace est très difficile
 (C'est un domaine de recherche en informatique). Nous allons donc utiliser une
@@ -14,7 +23,7 @@ librairie existante, parmi les plus utilisées au monde : **graphviz**
 Pour la visualisation des graphes, chacun de nos graphes devra pouvoir être sauvegardé
 dans un fichier texte (format **.dot**) qui sera utilisé par la librairie
 **graphviz** pour la visualisation.
-Tout les fichiers d'exemples génère un fichier **.dot** que vous pourrez tester.
+Tous les fichiers d'exemples génèrent un fichier **.dot** que vous pourrez tester.
 
 La librairie s'installe facilement sur les machines linux.
 - Si c'est votre cas, vous pourrez utiliser le script **lancerGraphviz.sh** qui
@@ -25,8 +34,6 @@ online de graphviz. Il en existe beaucoup.
 Dans ce cas : ouvrez un fichier **.dot**, copiez son contenu et collez le dans
 le formulaire de la page dont je viens de vous fournir l'adresse.
 Appuyez sur "Generate Graph" et observez votre graphe...
-
-
 
 ## La nouvelle librairie de graphes (en Python)
 
@@ -67,7 +74,6 @@ le projet L3_Graphes, cette documentation est visible depuis le fichier
 *Sources/docs/_build/html/index.html*
 
 
-
 ## Illustration du parcours en largeur :
 Au delà des parcours de Graphes dans des vrais graphes,
 il arrive que l'on utilise ces algorithmes sans même disposer d'une structure
@@ -76,6 +82,26 @@ labyrinthe, que l'on retrouve souvent dans des jeux.
 
 Lancez le programme dont le code est dans ![Sources/mainLabSimple.py](Sources/mainLabSimple.py).
 vous comprendrez mieux ensuite.
+
+Sinon, voici 2 captures d'écran :
+Vous cherchez un chemin dans un labyrinthe.
+- Les murs sont en gris,
+- le point de départ est vert
+- l'arrivée est rouge.
+- Le chemin le plus court trouvé par l'algorithme est en jaune.
+
+![lab1.png](lab1.png)
+
+Pour bien comprendre le fonctionnement,
+vous pouvez d'abord regarder le cours (...) puis executer l'algo pas à pas.
+
+Vous verrez alors :
+- l'ensemble des Sommets à faire en bleu.
+- l'ensemble des sommets déja traités en violet
+- une représentation de la table de prédécesseur qui dit comment acceder à un point sous forme de fleche sur chaque case.
+
+![lab2.png](lab2.png)
+
 
 L'interface est minimaliste :
 
