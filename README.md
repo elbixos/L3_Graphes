@@ -121,3 +121,9 @@ Quel est le graphe qui est caché la dessous ?
 - [Introduction](Cours/00_Intro.md)
 - [Cours 1](Cours/01_Cours1.md)
 - [Cours 2](Cours/02_Cours2.md)
+
+## Les TD
+- [TD1](Cours/td1.pdf)
+- [TD2](Cours/td2.pdf)
+- [TD3](Cours/td3.pdf)
+- [TD4](Cours/td4.pdf)
