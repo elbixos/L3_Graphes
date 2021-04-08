@@ -7,8 +7,8 @@ Le problème est celui de la détection d'arcs "critiques", avec la pseudo
 définition vue en TD.
 
 ## Travail préalable
-En utilisant la librairie présentée [ici](Sources\GraphLib\index.md),
-ainsi que les fichiers d'exemples tels que [celui ci](Sources\testUndirectedGraph.py)
+En utilisant la librairie présentée [ici](../Sources\GraphLib\index.md),
+ainsi que les fichiers d'exemples tels que [celui ci](../Sources\testUndirectedGraph.py)
 
 1. préparez un graphe non orienté
 2. visualisez le en utilisant graphviz
