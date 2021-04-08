@@ -127,3 +127,7 @@ Quel est le graphe qui est caché la dessous ?
 - [TD2](Cours/td2.pdf)
 - [TD3](Cours/td3.pdf)
 - [TD4](Cours/td4.pdf)
+
+## Les TP
+- [TP1](Cours/tp1.md)
+- [TP2](Cours/tp2.md)
